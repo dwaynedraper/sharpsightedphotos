@@ -20,8 +20,18 @@ export interface CloudinaryImage {
     secureUrl: string;
 }
 
+import { galleryFolders } from '@/content/gallery';
+
 export async function getGalleryImages(folderName: string): Promise<CloudinaryImage[]> {
     try {
+        // SECURITY: Validate that the requested folder exists in our whitelist
+        // This prevents arbitrary scanning of the Cloudinary account
+        const isValidFolder = galleryFolders.some(f => f.cloudinaryFolder === folderName);
+        if (!isValidFolder) {
+            console.warn(`Unauthorized access attempt: folder '${folderName}' is not whitelisted.`);
+            return [];
+        }
+
         // Search for resources in the specified folder
         // Sort by public_id to respect naming convention (01.jpg, 02.jpg, etc.)
         const results = await cloudinary.search

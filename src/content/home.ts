@@ -5,7 +5,7 @@ export const homeContent = {
         subheadline: "For people who don't fit into templates, poses, or normal business hours.",
         primaryCta: {
             text: "Book Your Discovery Hour",
-            href: "https://sharpsightedstudio.sproutstudio.com/book/discovery-hour-booking"
+            href: "https://sharpsightedphotos.sproutstudio.com/book/discovery-hour-booking"
         },
         secondaryCta: {
             text: "Start with a Connection Call",
@@ -91,7 +91,7 @@ export const homeContent = {
     packages: {
         headline: "Investment Options",
         disclaimer: "All sessions include the Discovery Hour.",
-        discoveryLink: "https://sharpsightedstudio.sproutstudio.com/book/discovery-hour-booking",
+        discoveryLink: "https://sharpsightedphotos.sproutstudio.com/book/discovery-hour-booking",
         items: [
             {
                 title: "The Verse",
@@ -132,7 +132,7 @@ export const homeContent = {
         text: "From the unfiltered to the elusive—if you've never had a photographer who could actually handle you, this is your moment.",
         primaryCta: {
             text: "Go Straight to Discovery Hour",
-            href: "https://sharpsightedstudio.sproutstudio.com/book/discovery-hour-booking"
+            href: "https://sharpsightedphotos.sproutstudio.com/book/discovery-hour-booking"
         },
         secondaryCta: {
             text: "Book a Free Connection Call",

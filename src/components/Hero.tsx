@@ -12,7 +12,7 @@ export default function Hero() {
                     src="/images/hero.jpg"
                     alt="Cinematic portrait background"
                     fill
-                    className="object-cover object-center md:object-[25%_center]"
+                    className="object-cover object-center md:object-[25%_35%]"
                     priority
                 />
                 {/* No overlays - letting the image pop */}

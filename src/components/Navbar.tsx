@@ -43,12 +43,12 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden md:flex items-center gap-8">
-                    <div className="flex gap-8 text-sm font-medium tracking-widest uppercase text-navy-900 dark:text-white">
+                    <div className="flex gap-8 text-sm font-medium tracking-widest uppercase">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`transition-colors hover:text-cyan-500 dark:hover:text-cyan-400 ${pathname === link.href ? 'text-cyan-500' : ''}`}
+                                className={`transition-all duration-200 text-cyan-500 dark:text-white hover:font-bold dark:hover:text-cyan-400 ${pathname === link.href ? 'font-bold' : ''}`}
                             >
                                 {link.name}
                             </Link>
@@ -83,7 +83,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-navy-900 dark:text-white text-3xl font-bold tracking-widest uppercase hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                            className={`text-3xl font-bold tracking-widest uppercase transition-all duration-200 text-cyan-500 dark:text-white hover:font-extrabold dark:hover:text-cyan-400`}
                         >
                             {link.name}
                         </Link>
