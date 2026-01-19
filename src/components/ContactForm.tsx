@@ -19,7 +19,7 @@ export default function ContactForm() {
 
         // Add data attributes
         script.dataset.apiKey = 'f8f7a61c3ebb87409d8e69ba34ab7653cdd3b3850bf2cd77';
-        script.dataset.leadFormId = '1814825';
+        script.dataset.leadFormId = '1812121';
         script.dataset.baseHostname = 'sproutstudio.com';
         script.async = true;
 
