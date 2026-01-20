@@ -63,7 +63,7 @@ export default function Guide() {
                             fill
                             className="object-cover object-left hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-navy-900/40 pointer-events-none" />
+
                     </div>
 
                 </div>

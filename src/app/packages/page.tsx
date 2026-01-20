@@ -31,8 +31,8 @@ export default function PackagesPage() {
                         />
                     </div>
                     <div className="space-y-6">
-                        <h2 className="text-3xl font-serif italic text-cyan-600 dark:text-cyan-400">The Discovery Hour</h2>
-                        <h3 className="text-xl font-light uppercase tracking-wide text-navy-900 dark:text-white">Where the story begins.</h3>
+                        <h2 className="text-3xl font-serif text-cyan-600 dark:text-cyan-400">The Discovery Hour</h2>
+                        <h3 className="text-xl font-light uppercase tracking-wide text-navy-900 dark:text-white mt-[-20px]">Where the story begins.</h3>
                         <div className="space-y-4 text-navy-700 dark:text-navy-100 leading-relaxed font-light">
                             <p>
                                 Most photographers ask you to step into their studio, stand on their mark, and smile. I ask you to stay in your world.
@@ -57,8 +57,9 @@ export default function PackagesPage() {
                     {/* Text First on Mobile, Image First on Desktop? No, let's alternate text/image visual flow */}
                     <div className="order-2 md:order-1 space-y-6">
                         <h2 className="text-4xl font-serif text-navy-900 dark:text-white">The &quot;Verse&quot;</h2>
-                        <h3 className="text-lg text-cyan-600 dark:text-cyan-400 font-light tracking-widest uppercase">Even a single verse can tell a story.</h3>
+                        <h3 className="text-lg text-cyan-600 dark:text-cyan-400 font-light tracking-widest uppercase mt-[-20px]">A focused chapter.</h3>
                         <div className="space-y-4 text-navy-700 dark:text-navy-100 leading-relaxed font-light">
+                            <p className='font-medium pl-4 border-l-4 border-cyan-600 dark:border-cyan-400'>Even a single verse can tell a story.</p>
                             <p>
                                 The Verse is for the individual who values quality over quantity. It is for the professional, the artist, or the creative who needs a visual update that feels authentic, not manufactured. You don't need the full production of a multi-location shoot, but you refuse to settle for a generic headshot.
                             </p>
@@ -114,32 +115,31 @@ export default function PackagesPage() {
             <section className="relative py-32 px-6 overflow-hidden bg-white dark:bg-navy-900 transition-colors">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/pkg_story.png"
+                        src="/images/pkg_story.jpg"
                         alt="Luxury story portrait background for The Story experience"
                         fill
-                        className="object-cover opacity-10 dark:opacity-20 transition-opacity"
+                        className="object-cover transition-opacity"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/90 dark:from-navy-900 dark:via-navy-900/80 dark:to-navy-900/90 transition-colors" />
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-5xl md:text-7xl font-serif text-navy-900 dark:text-white mb-4">The &quot;Story&quot;</h2>
-                        <p className="text-cyan-600 dark:text-cyan-400 text-xl uppercase tracking-widest font-light transition-colors">Our Signature Experience</p>
+                        <h2 className="text-5xl md:text-7xl font-serif text-cyan-400 dark:text-white mb-4">The &quot;Story&quot;</h2>
+                        <p className="text-cyan-600 dark:text-cyan-400 text-xl uppercase tracking-widest font-semibold transition-colors">Our Signature Experience</p>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    <div className="grid lg:grid-cols-2 gap-16 items-start bg-white/50 p-12 rounded-2xl">
                         <div className="space-y-6 text-lg leading-relaxed text-navy-700 dark:text-navy-50 font-light transition-colors">
-                            <p className="font-light text-2xl text-navy-900 dark:text-white">
+                            <p className="font-semibold text-2xl text-navy-900 border-l-4 border-cyan-600 pl-4">
                                 Your story deserves more than a single verse. It deserves room to breathe, space to unfold, and depth to truly shine.
                             </p>
-                            <p>
+                            <p className=" text-navy-900 font-medium">
                                 The Story is our signature experience for clients who want the full impact of a luxury portrait session. This experience blends a cinematic portrait session, a short story film, and a framed hero piece into one cohesive chapter of your life.
                             </p>
-                            <p>
+                            <p className=" text-navy-900 font-medium">
                                 We move at a calm, unhurried pace, explore multiple locations that matter to you, and make space for real moments to surface. You are guided and cared for from planning to final delivery.
                             </p>
-                            <p className="italic text-navy-500 dark:text-navy-200 border-l-2 border-cyan-500 pl-4 transition-colors">
+                            <p className=" text-navy-900 font-medium">
                                 This collection is never shipped or left at a doorstep. Instead, we sit down together for a private in-person reveal and handoff. Your final pieces are delivered framed and ready to display.
                             </p>
                         </div>
@@ -195,10 +195,10 @@ export default function PackagesPage() {
                             </div>
 
                             <div className="prose prose-navy dark:prose-invert prose-lg text-navy-700 dark:text-navy-50 font-light transition-colors">
-                                <p>
+                                <p className="font-semibold text-xl text-navy-950 dark:text-white mb-4 border-l-4 border-amber-600 pl-4">
                                     Some narratives are too vast to be contained by a single binding. When your story outgrows the page, it becomes a Saga.
                                 </p>
-                                <p>
+                                <p className="text-navy-950 dark:text-white font-light transition-colors mb-4">
                                     The Saga is crafted for the founder whose life and work have merged into one continuous narrative. It is a comprehensive, two-day documentation experience designed to capture the person you are, the entity you have built, and the journey that connects them.
                                 </p>
                                 <p className="text-navy-950 dark:text-white font-light transition-colors">
@@ -230,7 +230,7 @@ export default function PackagesPage() {
                                 fill
                                 className="object-cover"
                             />
-                            <div className="absolute inset-0 bg-amber-500/5 dark:bg-amber-900/10 mix-blend-overlay transition-colors"></div>
+
                         </div>
                     </div>
                 </div>
