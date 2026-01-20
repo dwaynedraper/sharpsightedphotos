@@ -1,7 +1,7 @@
 export const homeContent = {
     hero: {
-        headline: "Luxury Story Portraits that happen",
-        headlineAccent: "where you are, when you need",
+        headline: "Portraits and Media That Feel",
+        headlineAccent: "Undeniably You",
         subheadline: "For people who don't fit into templates, poses, or normal business hours.",
         primaryCta: {
             text: "Book Your Discovery Hour",
@@ -47,8 +47,8 @@ export const homeContent = {
         headline: "I'm a Visual Biographer for People Who Refuse to Shrink",
         p1: "I didn't build Sharp Sighted Photos to take safe, predictable portraits. I built it to work with people most photographers won't—or can't—handle.",
         p2: "The outliers. The anomalies. The ones who define their own gravity.",
-        p3: "With over a decade of technical obsession, I don't just capture how you look. I design lighting, location, and pacing around your energy—not a preset formula. I'm autistic, so I understand what it means to need direct communication and space to be exactly who you are. But I also understand what it means to have a personality that doesn't fit neatly into polite conversation or normal business hours.",
-        emphasis: "If you don't fit in a box, we'll build something bigger.",
+        p3: "With over a decade of technical obsession, I don't just capture how you look. I design lighting, location, and pacing around your energy—not a preset formula. I'm neurodivergent, so I understand what it means to need direct communication and space to be exactly who you are. I also understand what it means to have a personality that doesn't fit neatly into polite conversation or normal business hours.",
+        emphasis: "When your energy demands more than a backdrop, we'll go where the story actually happens.",
         name: "Dean Draper",
         title: "Visual Biographer"
     },
