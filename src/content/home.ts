@@ -90,7 +90,7 @@ export const homeContent = {
     },
     packages: {
         headline: "Investment Options",
-        disclaimer: "All sessions include the Discovery Hour.",
+        disclaimer: "All packages include a discovery session. The Saga receives a Comprehensive Brand Discovery Session.",
         discoveryLink: "https://sharpsightedphotos.sproutstudio.com/book/discovery-hour-booking",
         items: [
             {
@@ -110,7 +110,7 @@ export const homeContent = {
                 title: "The Saga",
                 price: "$[Price]",
                 description: "For founders and bold brands whose identity and work are inseparable.",
-                features: ["Two-Day Immersive Production", "Strategy & Cinematic Films", "90 Days of Media", "Personal Branding Assets", "Includes Discovery Hour"]
+                features: ["Two-Day Immersive Production", "Strategy & Cinematic Films", "90 Days of Media", "Personal Branding Assets", "Comprehensive Brand Discovery Session"]
             }
         ]
     },

@@ -25,7 +25,7 @@ export default function PackagesPage() {
                         {/* Placeholder for Discovery Hour Image */}
                         <Image
                             src="/images/pkg_discovery.png"
-                            alt="Discovery Hour"
+                            alt="Two people sharing drinks during Discovery Hour"
                             fill
                             className="object-cover"
                         />
@@ -96,7 +96,7 @@ export default function PackagesPage() {
                                     <div className="relative aspect-[3/4] w-full overflow-hidden grayscale shadow-inner">
                                         <Image
                                             src="/images/pkg_verse.png"
-                                            alt="The Verse Package"
+                                            alt="A framed image of a person standing in a street"
                                             fill
                                             className="object-cover"
                                         />
@@ -226,7 +226,7 @@ export default function PackagesPage() {
                         <div className="md:col-span-5 relative h-[600px] rounded-lg overflow-hidden border border-amber-200 dark:border-amber-900/30 shadow-2xl transition-colors">
                             <Image
                                 src="/images/pkg_saga.png"
-                                alt="The Saga Experience"
+                                alt="An image of a person doing work in a studio"
                                 fill
                                 className="object-cover"
                             />
