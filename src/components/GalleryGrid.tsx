@@ -42,7 +42,7 @@ export default function GalleryGrid() {
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={folder.coverImage}
-                                alt={folder.title}
+                                alt={`Luxury story portrait gallery - ${folder.title}`}
                                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/5 dark:group-hover:bg-navy-900/10 transition-colors" />

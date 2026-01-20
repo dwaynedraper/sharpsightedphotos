@@ -76,7 +76,7 @@ export default function GalleryModal({ folder, images, loading, onClose }: Galle
                                 >
                                     <CldImage
                                         src={image.publicId}
-                                        alt={`Gallery image ${index + 1}`}
+                                        alt="Luxury story portrait from client session"
                                         width={600}
                                         height={800}
                                         crop="fill"

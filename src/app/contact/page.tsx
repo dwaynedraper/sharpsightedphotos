@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Contact - Sharp Sighted Photos',
-    description: 'Get in touch directly or book your session.',
+    title: 'Contact Dean Draper - Luxury Story Portraits in DFW',
+    description: 'Get in touch for luxury, museum-quality story portraits in Dallas-Fort Worth that happen where you are, when you need.',
 };
 
 export default function ContactPage() {
@@ -32,7 +32,7 @@ export default function ContactPage() {
                                 <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-xl">
                                     <Image
                                         src="/images/contact_qr.png"
-                                        alt="Scan or click to download contact card"
+                                        alt="Scan to contact Dean Draper for Luxury Story Portraits in DFW"
                                         fill
                                         className="object-cover"
                                     />
@@ -48,8 +48,8 @@ export default function ContactPage() {
                     <div className="flex flex-col space-y-8 order-1 md:order-2">
                         <div className="space-y-4">
                             <h1 className="text-4xl md:text-5xl font-serif text-navy-900 dark:text-white">
-                                Ready to be seen? <br />
-                                <span className="italic text-cyan-600 dark:text-cyan-500">Let&apos;s talk.</span>
+                                Luxury DFW Portraits <br />
+                                <span className="italic text-cyan-600 dark:text-cyan-500">wherever you are.</span>
                             </h1>
                             <div className="flex flex-col">
                                 <span className="text-xl font-semibold text-navy-800 dark:text-navy-100">Dean Draper</span>

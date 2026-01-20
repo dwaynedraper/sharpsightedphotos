@@ -7,7 +7,7 @@ export default function GalleryPage() {
                 <div className="mb-12 text-center">
                     <h1 className="text-4xl md:text-5xl font-serif text-navy-900 dark:text-white mb-4">Gallery</h1>
                     <p className="text-lg text-navy-600 dark:text-navy-200 font-light max-w-2xl mx-auto">
-                        Explore our portfolio of cinematic portraits and storytelling imagery.
+                        Explore a collection of portraits captured where the story actually happens.
                     </p>
                 </div>
                 <GalleryGrid />

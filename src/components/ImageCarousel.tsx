@@ -65,7 +65,7 @@ export default function ImageCarousel({ images, initialIndex, onClose }: ImageCa
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={currentImage.secureUrl}
-                        alt={currentImage.publicId}
+                        alt="Luxury story portrait from client session"
                         className="max-h-[85vh] max-w-full object-contain mx-auto shadow-2xl"
                     />
                     <div className="absolute bottom-[-3rem] left-0 right-0 text-center text-white/70 text-sm">

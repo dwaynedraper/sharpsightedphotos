@@ -11,7 +11,7 @@ export default function Guide() {
                 <div className="w-full md:w-1/2 aspect-[4/5] bg-navy-200 dark:bg-navy-800 rounded-sm relative overflow-hidden group shadow-2xl">
                     <Image
                         src="/images/myPortrait.jpg"
-                        alt="A portrait of Dean Draper, the owner of Sharp Sighted Photos"
+                        alt="Dean Draper Portrait - Luxury Photographer in DFW"
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />

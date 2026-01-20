@@ -10,7 +10,7 @@ export default function Hero() {
             <div className="relative h-[65vh] w-full md:absolute md:inset-0 md:h-full z-0">
                 <Image
                     src="/images/hero.jpg"
-                    alt="Cinematic portrait background"
+                    alt="Luxury story portrait from client session in DFW"
                     fill
                     className="object-cover object-center md:object-[25%_35%]"
                     priority

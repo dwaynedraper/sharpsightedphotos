@@ -10,7 +10,7 @@ export default function PackagesPage() {
             <header className="pt-32 pb-20 px-6 bg-navy-50 dark:bg-navy-950 transition-colors">
                 <div className="max-w-7xl mx-auto text-center">
                     <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-navy-900 dark:text-white">
-                        Story Portrait Packages
+                        Luxury Story Portraits in DFW
                     </h1>
                     <p className="text-xl text-navy-600 dark:text-navy-100 max-w-2xl mx-auto font-light">
                         Your story deserves to be told with authenticity and depth.
@@ -25,7 +25,7 @@ export default function PackagesPage() {
                         {/* Placeholder for Discovery Hour Image */}
                         <Image
                             src="/images/pkg_discovery.png"
-                            alt="Two people sharing drinks during Discovery Hour"
+                            alt="Luxury story portrait planning during Discovery Hour in DFW"
                             fill
                             className="object-cover"
                         />
@@ -96,7 +96,7 @@ export default function PackagesPage() {
                                     <div className="relative aspect-[3/4] w-full overflow-hidden grayscale shadow-inner">
                                         <Image
                                             src="/images/pkg_verse.png"
-                                            alt="A framed image of a person standing in a street"
+                                            alt="Luxury story portrait from client session - The Verse"
                                             fill
                                             className="object-cover"
                                         />
@@ -115,7 +115,7 @@ export default function PackagesPage() {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/images/pkg_story.png"
-                        alt="The Story Background"
+                        alt="Luxury story portrait background for The Story experience"
                         fill
                         className="object-cover opacity-10 dark:opacity-20 transition-opacity"
                     />
@@ -226,7 +226,7 @@ export default function PackagesPage() {
                         <div className="md:col-span-5 relative h-[600px] rounded-lg overflow-hidden border border-amber-200 dark:border-amber-900/30 shadow-2xl transition-colors">
                             <Image
                                 src="/images/pkg_saga.png"
-                                alt="An image of a person doing work in a studio"
+                                alt="Luxury story portrait from client session - The Saga in DFW"
                                 fill
                                 className="object-cover"
                             />

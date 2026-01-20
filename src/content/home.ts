@@ -1,7 +1,7 @@
 export const homeContent = {
     hero: {
-        headline: "Portraits and Media That Feel",
-        headlineAccent: "Undeniably You",
+        headline: "Luxury Story Portraits that happen",
+        headlineAccent: "where you are, when you need",
         subheadline: "For people who don't fit into templates, poses, or normal business hours.",
         primaryCta: {
             text: "Book Your Discovery Hour",
@@ -13,8 +13,8 @@ export const homeContent = {
         }
     },
     problem: {
-        headline: "You Don't Fit in a Studio.",
-        headlineAccent: "And You Shouldn't Have To.",
+        headline: "Luxury DFW Story Portraits.",
+        headlineAccent: "Without the Studio Walls.",
         p1: "You've seen the same portraits a thousand times. Same lighting. Same poses. Same boring professionalism that sands down every edge, quirk, and ounce of personality until everyone looks like a LinkedIn headshot.",
         accentText: "But you're not everyone.",
         p2: "Maybe you're too loud, too crude, too bold for a white backdrop. Or too quiet, too careful, too particular about how you're seen. Maybe your story happens in a horse stable at dawn, a private whiskey room at 2 AM, or a garage full of cars worth more than most houses. Maybe you're neurodivergent and need a photographer who actually listens. Maybe you just refuse to be reduced to three poses and a forced smile.",
@@ -89,8 +89,8 @@ export const homeContent = {
         emphasis: "This is photography for people who live outside the lines."
     },
     packages: {
-        headline: "Investment Options",
-        disclaimer: "All packages include a discovery session. The Saga receives a Comprehensive Brand Discovery Session.",
+        headline: "Luxury Portrait Collections",
+        disclaimer: "Luxury Story Portraits in DFW are fully concierge experiences.",
         discoveryLink: "https://sharpsightedphotos.sproutstudio.com/book/discovery-hour-booking",
         items: [
             {
