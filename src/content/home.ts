@@ -28,17 +28,20 @@ export const homeContent = {
         cards: [
             {
                 icon: "📍",
-                title: "Any Location That Tells Your Truth",
+                title: "Wherever You Are",
+                image: "/images/vp_location.jpg",
                 text: "I don't have a studio. I have a vehicle, lighting gear, and zero attachment to convenience. If your story lives on a rooftop overlooking the city, in your workshop surrounded by half-finished projects, or in a tattoo parlor that feels more like home than your apartment—that's where we shoot."
             },
             {
                 icon: "🌑",
-                title: "Any Time You Need",
+                title: "On Your Schedule",
+                image: "/images/vp_schedule.jpg",
                 text: "I'll meet you at sunrise if that's when you're sharpest (but don't expect me to be chatty). I'll shoot midday. I'll run a session until 2 AM if that's when you come alive. Most photographers work normal hours. I work your hours."
             },
             {
                 icon: "🗝️",
-                title: "Discovery Hour: The Foundation",
+                title: "Discovery Hour",
+                image: "/images/vp_discoveryhour.jpg",
                 text: "Before we ever pick up a camera, we spend an hour figuring out how to design this around you. Not my taste. Not my templates. You. We map out location, timing, energy, accommodations, and story."
             }
         ]
