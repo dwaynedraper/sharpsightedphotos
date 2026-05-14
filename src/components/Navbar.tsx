@@ -13,7 +13,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Gallery', href: '/gallery' },
-        { name: 'Packages', href: '/packages' },
+        { name: 'Story Portraits', href: '/storyportraits' },
         { name: 'Headshots', href: '/headshots' },
         { name: 'Contact', href: '/contact' },
     ];

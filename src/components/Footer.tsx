@@ -47,7 +47,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4 items-start md:items-end">
           <div className="flex flex-wrap gap-6 text-xs font-light tracking-widest uppercase text-navy-600 dark:text-navy-300">
             <Link href="/gallery" className="hover:text-cyan-500 transition-colors">Gallery</Link>
-            <Link href="/packages" className="hover:text-cyan-500 transition-colors">Packages</Link>
+            <Link href="/storyportraits" className="hover:text-cyan-500 transition-colors">Story Portraits</Link>
             <Link href="/headshots" className="hover:text-cyan-500 transition-colors">Headshots</Link>
             <Link href="/contact" className="hover:text-cyan-500 transition-colors">Contact</Link>
           </div>

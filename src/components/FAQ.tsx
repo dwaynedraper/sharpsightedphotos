@@ -3,8 +3,25 @@ import { homeContent } from '@/content/home';
 export default function FAQ() {
     const { faq } = homeContent;
 
+    const schemaJson = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.items.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: item.a,
+            },
+        })),
+    });
+
     return (
         <section className="py-24 px-6 bg-white dark:bg-navy-900 transition-colors duration-300">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: schemaJson }}
+            />
             <div className="max-w-3xl mx-auto">
                 <h2 className="text-3xl md:text-5xl font-serif text-center text-navy-900 dark:text-white mb-16">
                     {faq.headline}

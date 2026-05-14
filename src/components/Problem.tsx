@@ -6,6 +6,9 @@ export default function Problem() {
     return (
         <section className="py-24 px-6 bg-white dark:bg-neutral-900 transition-colors duration-300">
             <div className="max-w-3xl mx-auto text-center space-y-8">
+                <p className="text-[0.65rem] tracking-[0.22em] uppercase font-light text-navy-400 dark:text-navy-500">
+                    {problem.eyebrow}
+                </p>
                 <h2 className="text-3xl md:text-5xl font-serif text-navy-900 dark:text-white leading-tight">
                     {problem.headline} <br />
                     <span className="text-coral-500">{problem.headlineAccent}</span>

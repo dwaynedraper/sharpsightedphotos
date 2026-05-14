@@ -39,9 +39,9 @@ export default function Hero() {
                             </a>
                             <a
                                 href={hero.secondaryCta.href}
-                                className="inline-flex items-center justify-center px-10 py-5 border-2 border-navy-200 dark:border-white/20 md:border-white/30 text-navy-900 dark:text-white md:text-white hover:bg-navy-900/5 dark:hover:bg-white/10 transition-all duration-300 rounded-sm font-bold tracking-widest uppercase text-sm"
+                                className="inline-flex items-center gap-2 text-navy-400 dark:text-white/40 md:text-white/40 hover:text-navy-700 dark:hover:text-white/80 md:hover:text-white/80 transition-colors text-sm font-light tracking-widest uppercase"
                             >
-                                {hero.secondaryCta.text}
+                                {hero.secondaryCta.text} <span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
