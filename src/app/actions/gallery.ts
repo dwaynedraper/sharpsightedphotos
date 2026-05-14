@@ -40,7 +40,15 @@ export async function getGalleryImages(folderName: string): Promise<CloudinaryIm
             .max_results(100)
             .execute();
 
-        return results.resources.map((resource: any) => ({
+        return results.resources.map((resource: {
+            asset_id: string;
+            public_id: string;
+            format: string;
+            width: number;
+            height: number;
+            url: string;
+            secure_url: string;
+        }) => ({
             id: resource.asset_id,
             publicId: resource.public_id,
             format: resource.format,

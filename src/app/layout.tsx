@@ -28,8 +28,11 @@ export const metadata: Metadata = {
   },
 };
 
+import { Suspense } from 'react';
 import { Providers } from './providers';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HubReturnToast from '@/components/HubReturnToast';
 import Script from 'next/script';
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
@@ -108,6 +111,10 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Footer />
+          <Suspense>
+            <HubReturnToast />
+          </Suspense>
         </Providers>
       </body>
     </html>

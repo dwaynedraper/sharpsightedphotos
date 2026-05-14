@@ -14,6 +14,7 @@ export default function Navbar() {
     const navLinks = [
         { name: 'Gallery', href: '/gallery' },
         { name: 'Packages', href: '/packages' },
+        { name: 'Headshots', href: '/headshots' },
         { name: 'Contact', href: '/contact' },
     ];
 
@@ -26,11 +27,6 @@ export default function Navbar() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    // Close mobile menu when pathname changes
-    useEffect(() => {
-        setIsOpen(false);
-    }, [pathname]);
 
     // Show background if scrolled OR if not on home page
     const showBackground = scrolled || !isHome;
@@ -80,7 +76,7 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 bg-white/98 dark:bg-navy-950/98 backdrop-blur-xl z-[60] md:hidden transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`fixed inset-0 bg-white/98 dark:bg-navy-950/98 backdrop-blur-xl z-60 md:hidden transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 {/* Close Button */}
                 <button
                     onClick={() => setIsOpen(false)}
@@ -95,6 +91,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
+                            onClick={() => setIsOpen(false)}
                             className={`text-3xl font-bold tracking-widest uppercase transition-all duration-200 text-cyan-500 dark:text-white hover:font-extrabold dark:hover:text-cyan-400`}
                         >
                             {link.name}

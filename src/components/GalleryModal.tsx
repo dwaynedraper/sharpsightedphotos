@@ -72,7 +72,7 @@ export default function GalleryModal({ folder, images, loading, onClose }: Galle
                                 <button
                                     key={image.id}
                                     onClick={() => setCarouselIndex(index)}
-                                    className="group relative aspect-[4/5] w-full overflow-hidden rounded-md bg-navy-800 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                                    className="group relative aspect-4/5 w-full overflow-hidden rounded-md bg-navy-800 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                                 >
                                     <CldImage
                                         src={image.publicId}

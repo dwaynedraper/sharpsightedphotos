@@ -20,7 +20,7 @@ export default function Hero() {
 
             {/* Content Section - Below on Mobile, Overlay Right on Desktop */}
             <div className="relative z-10 flex-1 bg-white dark:bg-navy-900 md:bg-transparent md:dark:bg-transparent md:h-full md:pointer-events-none md:flex md:items-center md:justify-end">
-                <div className="w-full px-6 py-20 text-center md:w-1/2 md:h-full md:flex md:flex-col md:justify-center md:text-left md:p-20 md:bg-gradient-to-l md:from-black/10 md:to-transparent pointer-events-auto">
+                <div className="w-full px-6 py-20 text-center md:w-1/2 md:h-full md:flex md:flex-col md:justify-center md:text-left md:p-20 md:bg-linear-to-l md:from-black/10 md:to-transparent pointer-events-auto">
                     <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000 p-5">
                         <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-normal leading-[0.9] text-navy-900 dark:text-white md:text-white drop-shadow-2xl">
                             {hero.headline} <br />

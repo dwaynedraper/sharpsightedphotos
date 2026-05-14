@@ -15,7 +15,7 @@ export default function Guide() {
                 <div className="w-full max-w-4xl relative grid grid-cols-2 gap-4 md:gap-8 p-4">
 
                     {/* 1. Top Left: myPortrait3 (Dog/Scope) - 3:4 (Portrait), Anchor Bottom to fix white top, Swapped from pos 3 */}
-                    <div className="relative aspect-[3/4] w-[80%] shadow-lg rounded-sm overflow-hidden z-10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 rotate-[-2deg]">
+                    <div className="relative aspect-3/4 w-[80%] shadow-lg rounded-sm overflow-hidden z-10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 -rotate-2">
                         <Image
                             src="/images/myPortrait3.jpg"
                             alt="Dean Draper - Scope Portrait"
@@ -45,7 +45,7 @@ export default function Guide() {
 
                     {/* 3. Bottom Left: myPortrait4 (Couple/Beach) - Original Aspect (~3:2), Centered */}
                     <div className="relative w-full flex justify-end items-start z-20 translate-y-[-10%] md:translate-y-[-15%] translate-x-4 md:translate-x-8">
-                        <div className="relative aspect-[3/2] w-[90%] shadow-xl rounded-sm overflow-hidden rotate-[1deg]">
+                        <div className="relative aspect-3/2 w-[90%] shadow-xl rounded-sm overflow-hidden rotate-1">
                             <Image
                                 src="/images/myPortrait4.jpg"
                                 alt="Dean Draper - Personal Life"
@@ -56,7 +56,7 @@ export default function Guide() {
                     </div>
 
                     {/* 4. Bottom Right: myPortrait (Relaxed/Whiskey) - 3:4 (Portrait), Anchor Left, Swapped from pos 0 */}
-                    <div className="relative aspect-[4/4] w-[85%] shadow-lg rounded-sm overflow-hidden z-30 -translate-x-4 -translate-y-24 md:-translate-x-8 md:-translate-y-32 rotate-[-1deg]">
+                    <div className="relative aspect-square w-[85%] shadow-lg rounded-sm overflow-hidden z-30 -translate-x-4 -translate-y-24 md:-translate-x-8 md:-translate-y-32 -rotate-1">
                         <Image
                             src="/images/myPortrait.jpg"
                             alt="Dean Draper - Relaxed Portrait"

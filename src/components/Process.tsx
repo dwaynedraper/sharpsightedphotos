@@ -12,7 +12,7 @@ export default function Process() {
 
                 <div className="grid md:grid-cols-3 gap-12 relative">
                     {/* Connector Line (Desktop) */}
-                    <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gradient-to-r from-navy-200 via-cyan-500 to-navy-200 dark:from-navy-800 dark:via-cyan-900 dark:to-navy-800 z-0" />
+                    <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-linear-to-r from-navy-200 via-cyan-500 to-navy-200 dark:from-navy-800 dark:via-cyan-900 dark:to-navy-800 z-0" />
 
                     {/* Step 1 */}
                     <div className="relative z-10 bg-navy-50 dark:bg-neutral-900 transition-colors duration-300">

@@ -8,7 +8,8 @@ export default function ThemeToggle() {
     const { theme, setTheme } = useTheme();
 
     useEffect(() => {
-        setMounted(true);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setMounted(true); // SSR hydration guard — intentional setState in effect
     }, []);
 
     if (!mounted) {

@@ -1,7 +1,6 @@
 import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Contact Dean Draper - Luxury Story Portraits in DFW',

@@ -35,7 +35,7 @@ export default function ImageCarousel({ images, initialIndex, onClose }: ImageCa
     const currentImage = images[currentIndex];
 
     return (
-        <div className="fixed inset-0 z-[60] bg-black/95 flex flex-col justify-center items-center">
+        <div className="fixed inset-0 z-60 bg-black/95 flex flex-col justify-center items-center">
             {/* Close button */}
             <button
                 onClick={onClose}

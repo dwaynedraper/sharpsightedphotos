@@ -1,7 +1,5 @@
 
 import Image from 'next/image';
-import Link from 'next/link';
-import Footer from '@/components/Footer';
 
 export default function PackagesPage() {
     return (
@@ -21,7 +19,7 @@ export default function PackagesPage() {
             {/* Discovery Hour Section */}
             <section className="py-20 px-6 bg-white dark:bg-neutral-900 transition-colors">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-2xl">
+                    <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg shadow-2xl">
                         {/* Placeholder for Discovery Hour Image */}
                         <Image
                             src="/images/pkg_discovery.png"
@@ -41,7 +39,7 @@ export default function PackagesPage() {
                                 Every session begins with a Discovery Hour—an intentional time set aside to go deeper than a traditional shoot ever could. Over drinks or coffee, we uncover your story and identify the places where you feel most alive. We leave the generic backdrops behind to shoot where you are most comfortable—whether that is playing chess in the park or sitting in a dark whiskey room in your favorite jacket.
                             </p>
                             <p>
-                                This isn’t just a meeting, it is the blueprint for your session. By the time we pick up a camera, we aren't strangers anymore, and we aren't in a sterile room. We are in your element, capturing a version of you that is authentic, comfortable, and undeniably real.
+                                This isn&apos;t just a meeting, it is the blueprint for your session. By the time we pick up a camera, we aren&apos;t strangers anymore, and we aren&apos;t in a sterile room. We are in your element, capturing a version of you that is authentic, comfortable, and undeniably real.
                             </p>
                             <p className="border-t border-navy-200 dark:border-navy-800 pt-4 text-sm italic text-navy-500 dark:text-navy-200">
                                 A deposit is required to secure this planning time, which is fully credited toward your final invoice.
@@ -61,10 +59,10 @@ export default function PackagesPage() {
                         <div className="space-y-4 text-navy-700 dark:text-navy-100 leading-relaxed font-light">
                             <p className='font-medium pl-4 border-l-4 border-cyan-600 dark:border-cyan-400'>Even a single verse can tell a story.</p>
                             <p>
-                                The Verse is for the individual who values quality over quantity. It is for the professional, the artist, or the creative who needs a visual update that feels authentic, not manufactured. You don't need the full production of a multi-location shoot, but you refuse to settle for a generic headshot.
+                                The Verse is for the individual who values quality over quantity. It is for the professional, the artist, or the creative who needs a visual update that feels authentic, not manufactured. You don&apos;t need the full production of a multi-location shoot, but you refuse to settle for a generic headshot.
                             </p>
                             <p>
-                                We treat this as a focused chapter of your narrative. Over a two-hour window, we meet at a single location that speaks to your character. This isn’t a "rush job"—two hours gives us the luxury to slow down, talk, and let your natural demeanor surface.
+                                We treat this as a focused chapter of your narrative. Over a two-hour window, we meet at a single location that speaks to your character. This isn&apos;t a &quot;rush job&quot;&mdash;two hours gives us the luxury to slow down, talk, and let your natural demeanor surface.
                             </p>
                         </div>
                         <div className="bg-white dark:bg-navy-950 p-6 rounded-lg border border-navy-200 dark:border-navy-800 mt-6 shadow-xl transition-colors">
@@ -87,14 +85,14 @@ export default function PackagesPage() {
                         {/* The Frame (95% Black, Hard Corners, 20px Border) */}
                         <div className="relative overflow-hidden bg-[#0d0d0d] p-5 shadow-2xl">
                             {/* Diagonal Reflection Gradient - Behind the Mat */}
-                            <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-white/5 pointer-events-none" />
-                            <div className="absolute inset-0 bg-gradient-to-bl from-black/40 via-transparent to-black/60 pointer-events-none" />
+                            <div className="absolute inset-0 bg-linear-to-tr from-white/10 via-transparent to-white/5 pointer-events-none" />
+                            <div className="absolute inset-0 bg-linear-to-bl from-black/40 via-transparent to-black/60 pointer-events-none" />
 
                             {/* The Mat (Pure White 40px padding) - On top of gradient */}
                             <div className="bg-white p-15 relative z-10">
                                 <div className="bg-gray-200 p-0.5">
                                     {/* The Image - Static Grayscale */}
-                                    <div className="relative aspect-[3/4] w-full overflow-hidden grayscale shadow-inner">
+                                    <div className="relative aspect-3/4 w-full overflow-hidden grayscale shadow-inner">
                                         <Image
                                             src="/images/pkg_verse.png"
                                             alt="Luxury story portrait from client session - The Verse"
@@ -190,7 +188,7 @@ export default function PackagesPage() {
                     <div className="grid md:grid-cols-12 gap-12 items-center">
                         <div className="md:col-span-7 space-y-8">
                             <div>
-                                <h2 className="text-6xl font-bold tracking-tighter mb-2 text-navy-900 dark:text-white transition-colors">The <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-800 dark:from-amber-200 dark:to-amber-500 transition-colors">&quot;Saga&quot;</span></h2>
+                                <h2 className="text-6xl font-bold tracking-tighter mb-2 text-navy-900 dark:text-white transition-colors">The <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-600 to-amber-800 dark:from-amber-200 dark:to-amber-500 transition-colors">&quot;Saga&quot;</span></h2>
                                 <p className="text-amber-600 dark:text-amber-500/80 font-mono text-sm uppercase tracking-widest font-light transition-colors">Legacy & Brand Architecture</p>
                             </div>
 
@@ -291,7 +289,6 @@ export default function PackagesPage() {
                 </div>
             </section>
 
-            <Footer />
         </main>
     );
 }

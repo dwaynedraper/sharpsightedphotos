@@ -20,7 +20,7 @@ export default function ValueProps() {
                 </h2>
 
                 <div className="grid md:grid-cols-3 gap-10 items-start">
-                    {valueProps.cards.map((card: any, index: number) => {
+                    {valueProps.cards.map((card, index) => {
                         const Icon = icons[index];
                         return (
                             <div key={index} className="flex flex-col h-full overflow-hidden rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.9)] bg-white dark:bg-black transition-colors duration-300">
@@ -40,11 +40,11 @@ export default function ValueProps() {
                                     </div>
 
                                     {/* Top-down gradient for icon background contrast */}
-                                    <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/50 to-transparent z-10" />
+                                    <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-black/50 to-transparent z-10" />
 
                                     {/* Bottom Fade Gradient (matches text box color) */}
                                     {/* Using a larger height (h-3/4) for a very smooth transition as requested */}
-                                    <div className="absolute inset-x-0 bottom-0 h-3/4 bg-gradient-to-t from-white via-white/40 dark:from-black dark:via-black/50 to-transparent z-20" />
+                                    <div className="absolute inset-x-0 bottom-0 h-3/4 bg-linear-to-t from-white via-white/40 dark:from-black dark:via-black/50 to-transparent z-20" />
 
                                     {/* Title - Positioned in the Gradient Area */}
                                     <div className="absolute bottom-8 left-10 right-10 z-30">

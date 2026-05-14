@@ -38,7 +38,7 @@ export default function GalleryGrid() {
                         className="group relative flex flex-col items-start text-left"
                         disabled={isLoading}
                     >
-                        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-navy-100 dark:bg-navy-800 mb-4 transition-colors">
+                        <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg bg-navy-100 dark:bg-navy-800 mb-4 transition-colors">
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src={folder.coverImage}

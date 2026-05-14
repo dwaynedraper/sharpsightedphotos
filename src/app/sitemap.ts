@@ -20,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
+        {
+            url: 'https://sharpsighted.photos/headshots',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.9,
+        },
     ];
 }
