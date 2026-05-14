@@ -6,7 +6,7 @@ export default function Hero() {
     const { hero } = homeContent;
 
     return (
-        <section className="min-h-screen flex flex-col md:block relative overflow-hidden">
+        <section className="min-h-screen flex flex-col md:block relative overflow-hidden max-w-360 mx-auto">
             {/* Background Image - Top on Mobile, Full on Desktop */}
             <div className="relative h-[65vh] w-full md:absolute md:inset-0 md:h-full z-0">
                 <Image

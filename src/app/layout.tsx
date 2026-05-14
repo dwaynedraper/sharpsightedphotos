@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Montserrat } from 'next/font/google';
 import { Suspense } from 'react';
-import Script from 'next/script';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import { Providers } from './providers';
@@ -87,16 +86,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className={`${playfair.variable} ${montserrat.variable} antialiased font-sans`}>
         {PLAUSIBLE_DOMAIN && (
-          <Script
+          <script
             defer
             data-domain={`${PLAUSIBLE_DOMAIN},sharp-sighted-network`}
             src="https://plausible.io/js/script.js"
-            strategy="afterInteractive"
           />
         )}
+      </head>
+      <body className={`${playfair.variable} ${montserrat.variable} antialiased font-sans`}>
         <Providers>
           <Navbar />
           {children}
