@@ -1,6 +1,13 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Montserrat } from 'next/font/google';
+import { Suspense } from 'react';
+import Script from 'next/script';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
+import { Providers } from './providers';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import HubReturnToast from '@/components/HubReturnToast';
 
 const playfair = Playfair_Display({
   variable: '--font-playfair',
@@ -14,28 +21,24 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
+const PLAUSIBLE_DOMAIN = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+
 export const metadata: Metadata = {
-  title: 'Sharp Sighted Photos | Cinematic Portraits & Media',
-  description: 'Concierge production house for the unconventional. Museum-quality portraits and dynamic media by Dean Draper.',
-  keywords: ['Cinematic Portraits', 'Dean Draper', 'DFW Photography', 'Visual Storytelling'],
+  title: {
+    template: '%s | Sharp Sighted Photos',
+    default: 'Sharp Sighted Photos | Luxury Story Portraits in DFW',
+  },
+  description: 'Luxury story portraits and concierge photography for people who don\'t fit templates. On-location, on your schedule, in DFW.',
+  keywords: ['Luxury Portrait Photography', 'Story Portraits', 'DFW Photographer', 'Dean Draper', 'On-Location Portraits', 'Corporate Headshots DFW'],
   openGraph: {
     title: 'Sharp Sighted Photos',
-    description: 'Concierge production house for the unconventional.',
+    description: 'Luxury story portraits for people who don\'t fit templates.',
     url: 'https://sharpsighted.photos',
     siteName: 'Sharp Sighted Photos',
     locale: 'en_US',
     type: 'website',
   },
 };
-
-import { Suspense } from 'react';
-import { Providers } from './providers';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import HubReturnToast from '@/components/HubReturnToast';
-import Script from 'next/script';
-
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -60,15 +63,7 @@ const jsonLd = {
   },
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: [
-      'Monday',
-      'Tuesday',
-      'Wednesday',
-      'Thursday',
-      'Friday',
-      'Saturday',
-      'Sunday',
-    ],
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     opens: '00:00',
     closes: '23:59',
   },
@@ -77,7 +72,7 @@ const jsonLd = {
     'https://linkedin.com/in/dean-draper',
   ],
   priceRange: '$$$',
-  description: 'Luxury Story Portraits that happen where you are, when you need. Museum-quality portraits and dynamic media by Dean Draper in DFW.',
+  description: 'Luxury story portraits that happen where you are, when you need. Museum-quality portraits and dynamic media by Dean Draper in DFW.',
 };
 
 export default function RootLayout({
@@ -87,27 +82,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${montserrat.variable} antialiased font-sans`}>
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}');
-              `}
-            </Script>
-          </>
-        )}
+      <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+      </head>
+      <body className={`${playfair.variable} ${montserrat.variable} antialiased font-sans`}>
+        {PLAUSIBLE_DOMAIN && (
+          <Script
+            defer
+            data-domain={`${PLAUSIBLE_DOMAIN},sharp-sighted-network`}
+            src="https://plausible.io/js/script.js"
+            strategy="afterInteractive"
+          />
+        )}
         <Providers>
           <Navbar />
           {children}
@@ -116,6 +105,7 @@ export default function RootLayout({
             <HubReturnToast />
           </Suspense>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   );

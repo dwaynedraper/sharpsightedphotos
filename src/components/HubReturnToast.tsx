@@ -15,6 +15,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { plausible } from '@/lib/plausible';
 
 type ToastState = 'idle' | 'visible' | 'minimizing' | 'minimized' | 'dismissed';
 
@@ -52,9 +53,13 @@ export default function HubReturnToast() {
     }
 
     if (searchParams.get('from') === 'hub') {
-      // Strip ?from=hub from the URL immediately
+      plausible('hub_referral_landed');
+
+      // Strip ?from=hub (and UTM params) from the URL immediately
       const params = new URLSearchParams(searchParams.toString());
       params.delete('from');
+      params.delete('utm_source');
+      params.delete('utm_medium');
       const newUrl = params.size > 0 ? `${pathname}?${params.toString()}` : pathname;
       router.replace(newUrl);
 

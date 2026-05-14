@@ -1,4 +1,5 @@
 import { homeContent } from '@/content/home';
+import TrackedCTA from '@/components/TrackedCTA';
 
 export default function Packages() {
     const { packages } = homeContent;
@@ -44,12 +45,14 @@ export default function Packages() {
                 </div>
 
                 <div className="text-center">
-                    <a
+                    <TrackedCTA
                         href={packages.connectionLink}
+                        event="connection_call_clicked"
+                        section="packages"
                         className="inline-block px-12 py-5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold tracking-widest uppercase text-sm transition-all shadow-xl shadow-cyan-900/20"
                     >
                         Book a Free Connection Call
-                    </a>
+                    </TrackedCTA>
                 </div>
 
                 <p className="text-center text-navy-500 dark:text-navy-400 text-sm mt-10 font-light">

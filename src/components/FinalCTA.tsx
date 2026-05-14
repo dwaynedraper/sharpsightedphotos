@@ -1,4 +1,5 @@
 import { homeContent } from '@/content/home';
+import TrackedCTA from '@/components/TrackedCTA';
 
 export default function FinalCTA() {
     const { finalCta } = homeContent;
@@ -20,12 +21,14 @@ export default function FinalCTA() {
                 </p>
 
                 <div className="flex flex-col md:flex-row gap-6 justify-center items-center pt-8">
-                    <a
+                    <TrackedCTA
                         href={finalCta.primaryCta.href}
+                        event="connection_call_clicked"
+                        section="final_cta"
                         className="px-10 py-5 bg-cyan-600 text-white font-bold tracking-widest uppercase hover:bg-cyan-500 transition-all shadow-xl shadow-cyan-900/20 text-sm"
                     >
                         {finalCta.primaryCta.text}
-                    </a>
+                    </TrackedCTA>
                     <a
                         href={finalCta.secondaryCta.href}
                         className="inline-flex items-center gap-2 text-navy-400 dark:text-navy-400 hover:text-navy-700 dark:hover:text-white transition-colors text-sm font-light tracking-widest uppercase"

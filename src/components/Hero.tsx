@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { homeContent } from '@/content/home';
+import TrackedCTA from '@/components/TrackedCTA';
 
 export default function Hero() {
     const { hero } = homeContent;
@@ -31,12 +32,14 @@ export default function Hero() {
                         </p>
 
                         <div className="flex flex-col md:flex-row gap-6 justify-center md:justify-start pt-8">
-                            <a
+                            <TrackedCTA
                                 href={hero.primaryCta.href}
+                                event="connection_call_clicked"
+                                section="hero"
                                 className="group relative inline-flex items-center justify-center gap-3 px-10 py-5 bg-cyan-600 hover:bg-cyan-500 text-white transition-all duration-300 rounded-sm overflow-hidden shadow-2xl"
                             >
                                 <span className="relative font-bold tracking-widest uppercase text-sm">{hero.primaryCta.text}</span>
-                            </a>
+                            </TrackedCTA>
                             <a
                                 href={hero.secondaryCta.href}
                                 className="inline-flex items-center gap-2 text-navy-400 dark:text-white/40 md:text-white/40 hover:text-navy-700 dark:hover:text-white/80 md:hover:text-white/80 transition-colors text-sm font-light tracking-widest uppercase"
