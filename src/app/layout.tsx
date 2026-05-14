@@ -86,11 +86,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {PLAUSIBLE_DOMAIN && <script async src="https://plausible.io/js/pa-rJNcgCeqyKrYkkNB_nbJ4.js" />}
         {PLAUSIBLE_DOMAIN && (
           <script
-            defer
-            data-domain={`${PLAUSIBLE_DOMAIN},sharp-sighted-network`}
-            src="https://plausible.io/js/script.js"
+            dangerouslySetInnerHTML={{
+              __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`,
+            }}
           />
         )}
       </head>
