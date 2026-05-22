@@ -71,7 +71,7 @@ export default function PackagesPage() {
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 2 hour portrait session</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 1 location</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 1 wardrobe change</li>
-                                <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 8+ hand edited images</li>
+                                <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 8 hand edited images</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Five letter-sized framed prints</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Online gallery with downloads</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Delivery within 7 days</li>
@@ -155,7 +155,7 @@ export default function PackagesPage() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="text-cyan-600 dark:text-cyan-400 text-xl">✦</span>
-                                    <span>16+ hand edited images</span>
+                                    <span>16 hand edited images</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="text-cyan-600 dark:text-cyan-400 text-xl">✦</span>
@@ -209,7 +209,7 @@ export default function PackagesPage() {
                                     <p className="flex items-center gap-2"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> Two-day immersive brand experience</p>
                                     <p className="flex items-center gap-2"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> Comprehensive Brand Discovery Session</p>
                                     <p className="flex items-center gap-2 transition-colors"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> Visual Strategy Guide</p>
-                                    <p className="flex items-center gap-2 transition-colors"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> 30–40 versatile images</p>
+                                    <p className="flex items-center gap-2 transition-colors"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> 35 versatile images</p>
                                     <p className="flex items-center gap-2 transition-colors"><span className="text-amber-600 dark:text-amber-500 font-bold transition-colors">✓</span> White-glove delivery & usage guidance</p>
                                 </div>
                                 <div className="space-y-2 transition-colors">
