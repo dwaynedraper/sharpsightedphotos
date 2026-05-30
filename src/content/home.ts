@@ -94,14 +94,14 @@ export const homeContent = {
                 title: "The Verse",
                 price: "Starting at $900",
                 description: "For the person who wants a focused, elevated update that actually feels like them.",
-                features: ["2 Hours", "1 Location", "2 Outfits", "8 Edited Images", "Five Framed Prints"]
+                features: ["2 Hours", "1 Location", "2 Outfits", "10 Edited Images", "Five Framed Prints"]
             },
             {
                 title: "The Story",
                 price: "Starting at $1,700",
                 description: "A headshot is a utility; this is a legacy. We take the time to strip away the performance and capture the version of you that feels undeniable. This is the one that matters.",
                 isPopular: true,
-                features: ["6 Hours", "Multiple Locations", "Unlimited Outfits", "16 edited images", "Four Framed Prints + 13x19 Hero Print", "60-Second Story Reel"]
+                features: ["6 Hours", "Multiple Locations", "Unlimited Outfits", "20 edited images", "Four Framed Prints + 13x19 Hero Print", "60-Second Story Reel"]
             },
             {
                 title: "The Saga",
