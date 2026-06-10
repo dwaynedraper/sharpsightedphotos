@@ -41,37 +41,46 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Sharp Sighted Photos',
-  image: 'https://sharpsighted.photos/images/hero.jpg',
-  '@id': 'https://sharpsighted.photos',
-  url: 'https://sharpsighted.photos',
-  telephone: '+12142335338',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '',
-    addressLocality: 'Dallas-Fort Worth',
-    addressRegion: 'TX',
-    postalCode: '',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 32.7767,
-    longitude: -96.797,
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '00:00',
-    closes: '23:59',
-  },
-  sameAs: [
-    'https://instagram.com/sharpsightedstudio',
-    'https://linkedin.com/in/dean-draper',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://sharpsightedstudio.com/#organization',
+      name: 'Sharp Sighted Studio',
+      legalName: 'Sharp Sighted Studio',
+      url: 'https://sharpsightedstudio.com',
+      telephone: '+12142335338',
+      email: 'dean@sharpsightedstudio.com',
+      founder: { '@type': 'Person', name: 'Dean Draper' },
+      foundingDate: '2022-07',
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id': 'https://sharpsighted.photos/#business',
+      name: 'Sharp Sighted Photos',
+      legalName: 'Sharp Sighted Studio',
+      description: 'On-location personal branding photographer and portrait studio serving the 121 corridor and greater DFW. Story sessions, corporate headshots, and executive portraits by Dean Draper.',
+      url: 'https://sharpsighted.photos',
+      telephone: '+12142335338',
+      email: 'dean@sharpsightedstudio.com',
+      image: 'https://sharpsighted.photos/images/hero.jpg',
+      priceRange: '$$$',
+      parentOrganization: { '@id': 'https://sharpsightedstudio.com/#organization' },
+      areaServed: [
+        'Allen, TX', 'Plano, TX', 'Frisco, TX', 'McKinney, TX',
+        'Lewisville, TX', 'The Colony, TX', 'Coppell, TX', 'Roanoke, TX',
+        'Denton, TX', 'Grapevine, TX', 'Southlake, TX', 'Colleyville, TX',
+        'Westlake, TX',
+      ],
+      sameAs: [
+        'https://sharpsightedstudio.com',
+        'https://sharpsighted.media',
+        'https://sharpsighted.studio',
+        'https://www.instagram.com/sharp_sighted_studio',
+        'https://www.facebook.com/sharpsightedstudio',
+        'https://www.linkedin.com/in/dean-draper',
+      ],
+    },
   ],
-  priceRange: '$$$',
-  description: 'Luxury story portraits that happen where you are, when you need. Museum-quality portraits and dynamic media by Dean Draper in DFW.',
 };
 
 export default function RootLayout({
