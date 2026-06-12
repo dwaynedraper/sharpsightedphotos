@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
     title: 'Contact Dean Draper - Luxury Story Portraits in DFW',
     description: 'Get in touch for luxury, museum-quality story portraits in Dallas-Fort Worth that happen where you are, when you need.',
 };

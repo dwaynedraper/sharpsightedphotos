@@ -1,5 +1,12 @@
 
+import type { Metadata } from 'next';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: 'Story Portraits',
+  description: 'Lifestyle and story portrait sessions — Verse, Story, and Saga — on location across DFW. For people whose story doesn\'t fit a studio backdrop.',
+  alternates: { canonical: '/storyportraits' },
+};
 
 export default function PackagesPage() {
     return (

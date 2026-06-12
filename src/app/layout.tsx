@@ -23,6 +23,7 @@ const montserrat = Montserrat({
 const PLAUSIBLE_SCRIPT = process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT;
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sharpsighted.photos'),
   title: {
     template: '%s | Sharp Sighted Photos',
     default: 'Sharp Sighted Photos | Luxury Story Portraits in DFW',
@@ -36,7 +37,10 @@ export const metadata: Metadata = {
     siteName: 'Sharp Sighted Photos',
     locale: 'en_US',
     type: 'website',
+    images: [{ url: '/images/hero.jpg', alt: 'Sharp Sighted Photos — luxury story portraits in DFW' }],
   },
+  twitter: { card: 'summary_large_image' },
+  robots: { index: true, follow: true },
 };
 
 const jsonLd = {

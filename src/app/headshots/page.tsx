@@ -6,6 +6,7 @@ const cld = (publicId: string, w = 1200) =>
     `https://res.cloudinary.com/${CLOUD}/image/upload/w_${w},f_auto,q_auto/${publicId}`;
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/headshots' },
     title: 'Corporate Headshots in DFW | Sharp Sighted Photos',
     description: 'Premium corporate headshots and editorial portraits for North Texas firms. We come to you. Clean, consistent, and ready to deploy in days.',
     openGraph: {

@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
 import GalleryGrid from '@/components/GalleryGrid';
+
+export const metadata: Metadata = {
+  title: 'Portrait Gallery',
+  description: 'Recent story portraits, headshots, and on-location sessions by Sharp Sighted Photos in DFW.',
+  alternates: { canonical: '/gallery' },
+};
 
 export default function GalleryPage() {
     return (
