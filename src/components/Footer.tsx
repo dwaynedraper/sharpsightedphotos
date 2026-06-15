@@ -25,6 +25,12 @@ export default function Footer() {
           <p className="font-serif font-light italic text-sm text-navy-500 dark:text-navy-300">
             Stay Sharp. Stay Seen. Stay Human.
           </p>
+          <address className="not-italic mt-2 flex flex-col gap-1 text-xs text-navy-500 dark:text-navy-300">
+            <span className="text-navy-700 dark:text-navy-200">Sharp Sighted Studio</span>
+            <a href="tel:+12142335338" className="hover:text-cyan-500 transition-colors">(214) 233-5338</a>
+            <a href="mailto:dean@sharpsightedstudio.com" className="hover:text-cyan-500 transition-colors">dean@sharpsightedstudio.com</a>
+            <span>Serving the DFW 121 corridor &amp; North Texas</span>
+          </address>
           <a
             href="https://sharpsightedstudio.com/?reset=true"
             className="text-[0.72rem] tracking-widest uppercase font-light text-navy-400 dark:text-navy-400 hover:text-cyan-500 transition-colors mt-1"
