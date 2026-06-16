@@ -9,8 +9,54 @@ export const metadata: Metadata = {
 };
 
 export default function PackagesPage() {
+    const offersJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'OfferCatalog',
+        '@id': 'https://sharpsighted.photos/storyportraits#offers',
+        name: 'Story Portrait Sessions — Sharp Sighted Photos',
+        provider: {
+            '@type': 'LocalBusiness',
+            name: 'Sharp Sighted Photos',
+            telephone: '+12142335338',
+            areaServed: 'Dallas–Fort Worth, TX (121 corridor)',
+            url: 'https://sharpsighted.photos',
+        },
+        itemListElement: [
+            {
+                '@type': 'Offer',
+                name: 'The Verse',
+                description: 'A focused two-hour portrait session at one location — 10 hand-edited images, five framed prints, and an online gallery. Starting price; print and digital add-ons vary.',
+                price: '900',
+                priceCurrency: 'USD',
+                url: 'https://sharpsighted.photos/storyportraits',
+                itemOffered: { '@type': 'Service', name: 'The Verse — Story Portrait Session', serviceType: 'Portrait photography' },
+            },
+            {
+                '@type': 'Offer',
+                name: 'The Story',
+                description: 'Signature six-hour luxury session across multiple locations — 20 hand-edited images, framed prints, a hero print, and a short story film, with a private in-person reveal. Starting price.',
+                price: '1700',
+                priceCurrency: 'USD',
+                url: 'https://sharpsighted.photos/storyportraits',
+                itemOffered: { '@type': 'Service', name: 'The Story — Signature Portrait Experience', serviceType: 'Portrait photography' },
+            },
+            {
+                '@type': 'Offer',
+                name: 'The Saga',
+                description: 'A two-day legacy and brand-architecture experience for founders — 30 versatile images, multiple cinematic films, and a visual strategy guide. Starting price.',
+                price: '8000',
+                priceCurrency: 'USD',
+                url: 'https://sharpsighted.photos/storyportraits',
+                itemOffered: { '@type': 'Service', name: 'The Saga — Legacy & Brand Architecture', serviceType: 'Portrait photography' },
+            },
+        ],
+    };
     return (
         <main className="min-h-screen bg-white dark:bg-navy-900 text-navy-900 dark:text-navy-50 transition-colors duration-300">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(offersJsonLd) }}
+            />
             {/* Header Section */}
             <header className="pt-32 pb-20 px-6 bg-navy-50 dark:bg-navy-950 transition-colors">
                 <div className="max-w-7xl mx-auto text-center">
@@ -19,6 +65,9 @@ export default function PackagesPage() {
                     </h1>
                     <p className="text-xl text-navy-600 dark:text-navy-100 max-w-2xl mx-auto font-light">
                         Your story deserves to be told with authenticity and depth.
+                    </p>
+                    <p className="text-base text-navy-500 dark:text-navy-200 max-w-2xl mx-auto font-light italic mt-6">
+                        Not the cheapest portraits in DFW — the most intentional. If you want fast and forgettable, I&apos;m not your photographer. If you want images worth keeping for decades, you&apos;re exactly where you should be.
                     </p>
                 </div>
             </header>
@@ -63,6 +112,7 @@ export default function PackagesPage() {
                     <div className="order-2 md:order-1 space-y-6">
                         <h2 className="text-4xl font-serif text-navy-900 dark:text-white">The &quot;Verse&quot;</h2>
                         <h3 className="text-lg text-cyan-600 dark:text-cyan-400 font-light tracking-widest uppercase mt-[-20px]">A focused chapter.</h3>
+                        <p className="text-2xl font-light text-navy-900 dark:text-white">Starts at <span className="font-bold text-cyan-700 dark:text-cyan-400">$900</span></p>
                         <div className="space-y-4 text-navy-700 dark:text-navy-100 leading-relaxed font-light">
                             <p className='font-medium pl-4 border-l-4 border-cyan-600 dark:border-cyan-400'>Even a single verse can tell a story.</p>
                             <p>
@@ -131,6 +181,7 @@ export default function PackagesPage() {
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-7xl font-serif text-cyan-400 dark:text-white mb-4">The &quot;Story&quot;</h2>
                         <p className="text-cyan-600 dark:text-cyan-400 text-xl uppercase tracking-widest font-semibold transition-colors">Our Signature Experience</p>
+                        <p className="text-2xl font-light text-white mt-4">Starts at <span className="font-bold">$1,700</span></p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-16 items-start bg-white/50 p-12 rounded-2xl">
@@ -197,6 +248,7 @@ export default function PackagesPage() {
                             <div>
                                 <h2 className="text-6xl font-bold tracking-tighter mb-2 text-navy-900 dark:text-white transition-colors">The <span className="text-transparent bg-clip-text bg-linear-to-r from-amber-600 to-amber-800 dark:from-amber-200 dark:to-amber-500 transition-colors">&quot;Saga&quot;</span></h2>
                                 <p className="text-amber-600 dark:text-amber-500/80 font-mono text-sm uppercase tracking-widest font-light transition-colors">Legacy & Brand Architecture</p>
+                                <p className="text-2xl font-light text-navy-900 dark:text-white mt-2">Starts at <span className="font-bold text-amber-600 dark:text-amber-500">$8,000</span></p>
                             </div>
 
                             <div className="prose prose-navy dark:prose-invert prose-lg text-navy-700 dark:text-navy-50 font-light transition-colors">
