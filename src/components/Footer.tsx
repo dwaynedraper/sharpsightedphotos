@@ -55,6 +55,7 @@ export default function Footer() {
             <Link href="/gallery" className="hover:text-cyan-500 transition-colors">Gallery</Link>
             <Link href="/storyportraits" className="hover:text-cyan-500 transition-colors">Story Portraits</Link>
             <Link href="/headshots" className="hover:text-cyan-500 transition-colors">Headshots</Link>
+            <Link href="/gift" className="hover:text-cyan-500 transition-colors">Gift Cards</Link>
             <Link href="/contact" className="hover:text-cyan-500 transition-colors">Contact</Link>
           </div>
           <div className="text-navy-500 text-[10px] tracking-widest uppercase font-light">

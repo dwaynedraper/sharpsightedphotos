@@ -322,6 +322,7 @@ export default function HeadshotsPage() {
                             <header className="mb-6">
                                 <h3 className="text-3xl font-serif text-navy-900 dark:text-white mb-2">The Standard Set.</h3>
                                 <p className="text-cyan-600 dark:text-cyan-400 text-xl font-semibold">$600 setup + $70 to $90 per person</p>
+                                <p className="text-sm text-navy-700 dark:text-navy-100 font-medium mt-1">Founding rate for teams booked and paid by December 25, 2026. The shoot can be in January.</p>
                                 <p className="text-sm text-navy-600 dark:text-navy-200 italic mt-2 font-light">
                                     Per-person rate scales with number of selects and complexity. Most teams land at $80 per person.
                                 </p>
@@ -377,7 +378,7 @@ export default function HeadshotsPage() {
                                     Standard pricing plus $250 to $350 per person upgrade.
                                 </p>
                                 <p className="text-cyan-600 dark:text-cyan-400 text-base font-semibold mt-1">
-                                    Or $895 all-in for a single executive.
+                                    Or $900 all-in for a single executive.
                                 </p>
                                 <p className="text-sm text-navy-600 dark:text-navy-200 italic mt-2 font-light">
                                     Includes everything in the Standard Set, plus a 20-minute environmental editorial sitting and three to five final editorial images.
@@ -495,19 +496,19 @@ export default function HeadshotsPage() {
             {/* FIRST-TIME OFFER */}
             <section className="py-20 px-6 bg-linear-to-br from-cyan-600 to-cyan-800 dark:from-cyan-800 dark:to-navy-950 transition-colors">
                 <div className="max-w-4xl mx-auto text-center text-white">
-                    <p className="text-xs uppercase tracking-[0.3em] font-light mb-4 text-cyan-100">First-Time Client Offer</p>
+                    <p className="text-xs uppercase tracking-[0.3em] font-semibold mb-4 text-cyan-100">Founding Rates</p>
                     <h2 className="text-3xl md:text-5xl font-serif mb-6 leading-tight">
-                        Your first booking. 50 percent off setup.
+                        Book by December 25. Shoot in January.
                     </h2>
-                    <p className="text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed text-cyan-50">
-                        New clients who book before June 30 receive 50 percent off the $600 setup fee. A simple way to make the first step easier without giving the work away.
+                    <p className="text-lg md:text-xl font-normal max-w-2xl mx-auto leading-relaxed text-cyan-50">
+                        Today&apos;s prices hold for any team day booked and paid by December 25, 2026, even when the shoot happens in January. That&apos;s when new hires arrive and everyone updates their LinkedIn. Wednesday and Thursday dates go first.
                     </p>
                     <div className="pt-8">
                         <a
                             href={BOOKING_LINK}
                             className="inline-flex items-center justify-center px-10 py-5 bg-white text-cyan-700 hover:bg-cyan-50 transition-all duration-300 rounded-sm shadow-2xl font-bold tracking-widest uppercase text-sm"
                         >
-                            Claim the offer
+                            Hold a January date
                         </a>
                     </div>
                 </div>

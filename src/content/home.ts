@@ -94,14 +94,14 @@ export const homeContent = {
                 title: "The Verse",
                 price: "Starting at $900",
                 description: "For the person who wants a focused, elevated update that actually feels like them.",
-                features: ["2 Hours", "1 Location", "2 Outfits", "10 Edited Images", "Five Framed Prints"]
+                features: ["2 Hours", "1 Location", "2 Outfits", "10 Edited Images", "Framed Triptych", "10 Story Cards"]
             },
             {
                 title: "The Story",
                 price: "Starting at $1,700",
                 description: "A headshot is a utility; this is a legacy. We take the time to strip away the performance and capture the version of you that feels undeniable. This is the one that matters.",
                 isPopular: true,
-                features: ["6 Hours", "Multiple Locations", "Unlimited Outfits", "20 edited images", "Four Framed Prints + 13x19 Hero Print", "60-Second Story Reel"]
+                features: ["6 Hours", "Multiple Locations", "Unlimited Outfits", "20 Edited Images", "Four Framed Prints + Framed 13x19 Hero Print", "20 Story Cards"]
             },
             {
                 title: "The Saga",
@@ -119,7 +119,7 @@ export const homeContent = {
             { q: "I'm loud, bold, and kind of a lot. Is that okay?", a: "Absolutely. I work with people across the entire spectrum. If you're unfiltered or larger than life, bring it. I'm here to capture your truth, not sand it down." },
             { q: "What if I hate being photographed?", a: "That's common. Discovery Hour exists so we can figure out what's made past experiences uncomfortable and design this one differently." },
             { q: "Can I bring someone with me?", a: "Yes. If having a friend, partner, or support person helps, bring them." },
-            { q: "What if I need to cancel or reschedule?", a: "You can reschedule Discovery Hour once with 48 hours' notice. For cancellations, you need 7 days' notice for a refund. Full details are in the Discovery Hour Agreement." },
+            { q: "What if I need to cancel or reschedule?", a: "You can cancel within 3 business days of booking for a full refund. After that, your booking fee is non-refundable. With 14 or more days' notice, the rest of your deposit is refunded. With less notice, it moves to a new date within 90 days. Weather never costs you anything." },
             { q: "Do you do family, wedding, or newborn photography?", a: "I'll work with families who want something unconventional, but traditional family, wedding, and newborn photography isn't my focus. I'm happy to refer you to artists who specialize in those areas. My heart is with individuals and bold brands who want to go deeper." }
         ]
     },

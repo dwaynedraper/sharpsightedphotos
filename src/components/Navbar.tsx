@@ -15,6 +15,7 @@ export default function Navbar() {
         { name: 'Gallery', href: '/gallery' },
         { name: 'Story Portraits', href: '/storyportraits' },
         { name: 'Headshots', href: '/headshots' },
+        { name: 'Gift Cards', href: '/gift' },
         { name: 'Contact', href: '/contact' },
     ];
 

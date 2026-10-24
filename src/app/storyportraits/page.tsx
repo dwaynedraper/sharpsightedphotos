@@ -25,7 +25,7 @@ export default function PackagesPage() {
             {
                 '@type': 'Offer',
                 name: 'The Verse',
-                description: 'A focused two-hour portrait session at one location — 10 hand-edited images, five framed prints, and an online gallery. Starting price; print and digital add-ons vary.',
+                description: 'A focused two-hour portrait session at one location. 10 hand-edited images, a framed triptych, story cards of every image, and an online gallery. Starting price. Print and digital add-ons vary.',
                 price: '900',
                 priceCurrency: 'USD',
                 url: 'https://sharpsighted.photos/storyportraits',
@@ -34,7 +34,7 @@ export default function PackagesPage() {
             {
                 '@type': 'Offer',
                 name: 'The Story',
-                description: 'Signature six-hour luxury session across multiple locations — 20 hand-edited images, framed prints, a hero print, and a short story film, with a private in-person reveal. Starting price.',
+                description: 'Signature six-hour luxury session across multiple locations. 20 hand-edited images, four framed prints, a framed 13x19 hero print, and story cards of every image, with a private in-person reveal. Starting price.',
                 price: '1700',
                 priceCurrency: 'USD',
                 url: 'https://sharpsighted.photos/storyportraits',
@@ -129,7 +129,8 @@ export default function PackagesPage() {
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 1 location</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 1 wardrobe change</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> 10 hand edited images</li>
-                                <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Five letter-sized framed prints</li>
+                                <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> A framed triptych: three letter-sized prints chosen to hang together</li>
+                                <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Story cards: every image as a 4×6 print, in a box</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Online gallery with downloads</li>
                                 <li className="flex items-center gap-2"><span className="text-cyan-600 dark:text-cyan-500">▪</span> Delivery within 7 days</li>
                             </ul>
@@ -190,7 +191,7 @@ export default function PackagesPage() {
                                 Your story deserves more than a single verse. It deserves room to breathe, space to unfold, and depth to truly shine.
                             </p>
                             <p className=" text-navy-900 font-medium">
-                                The Story is our signature experience for clients who want the full impact of a luxury portrait session. This experience blends a cinematic portrait session, a short story film, and a framed hero piece into one cohesive chapter of your life.
+                                The Story is our signature experience for clients who want the full impact of a luxury portrait session. This experience blends a cinematic portrait session, a framed hero piece, and a box of story cards into one cohesive chapter of your life.
                             </p>
                             <p className=" text-navy-900 font-medium">
                                 We move at a calm, unhurried pace, explore multiple locations that matter to you, and make space for real moments to surface. You are guided and cared for from planning to final delivery.
@@ -221,11 +222,11 @@ export default function PackagesPage() {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="text-cyan-600 dark:text-cyan-400 text-xl">✦</span>
-                                    <span>One hero 13x19 hero print on premium paper</span>
+                                    <span>One framed 13x19 hero print on fine art paper</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="text-cyan-600 dark:text-cyan-400 text-xl">✦</span>
-                                    <span>One short story film</span>
+                                    <span>Story cards: every image as a 4×6 print, in a box</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <span className="text-cyan-600 dark:text-cyan-400 text-xl">✦</span>
