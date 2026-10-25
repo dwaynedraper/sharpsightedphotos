@@ -1,7 +1,13 @@
 @import "tailwindcss";
+@import "../styles/ps.css";
+@import "../styles/bz.css";
+@import "../styles/ps-site.css";
+@import "../styles/bz-site.css";
+@import "../styles/home.css";
+@import "../styles/motion.css";
 
 @theme inline {
-  /* Brand Palette - Deepened and shifted to Slate/Navy Hybrid */
+  /* Legacy palette, still used by the gallery lightbox and the hub toast. */
   --color-navy-50: #f8fafc;
   --color-navy-100: #f1f5f9;
   --color-navy-200: #e2e8f0;
@@ -14,12 +20,9 @@
   --color-navy-900: #0f172a;  /* Dark Slate-Navy */
   --color-navy-950: #020617;  /* Deepest Slate-Navy */
   --color-navy-990: #01040a;
-
-  /* Neutral Additions */
   --color-neutral-800: #262626;
   --color-neutral-900: #171717; /* Neutral Dark Gray */
   --color-neutral-950: #0a0a0a;
-
   --color-cyan-50: #EBF8FE;
   --color-cyan-100: #D7F1FD;
   --color-cyan-200: #BAE6FD;
@@ -30,7 +33,6 @@
   --color-cyan-700: #0369A1;
   --color-cyan-800: #075985;
   --color-cyan-900: #0C4A6E;
-
   --color-coral-100: #FAE9F3;
   --color-coral-200: #F6D4E7;
   --color-coral-300: #E269AC;
@@ -41,25 +43,16 @@
   --color-coral-800: #551036;
   --color-coral-900: #400C29;
   --color-coral-950: #400C29;
-
   --font-sans: var(--font-montserrat);
   --font-serif: var(--font-playfair);
 }
 
-/* Explicit Dark Mode strategy using Tailwind .dark class */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* Base Styles */
+/* The new design system is light only. Each side sets its own colors inside .ps or .bz. */
+html { color-scheme: light; }
 body {
-  @apply bg-white dark:bg-navy-900 text-navy-900 dark:text-navy-50 transition-colors duration-300;
-  font-family: var(--font-montserrat), sans-serif;
+  margin: 0;
+  background: #FFFFFF;
+  color: #151A33;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-playfair), serif;
-}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

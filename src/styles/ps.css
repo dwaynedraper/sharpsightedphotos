@@ -1,0 +1,201 @@
+/* For You side. Daylight Cobalt, Soft Leaf, gallery wall. Generated from the approved test pages. */
+.ps {
+
+
+
+
+
+
+
+
+/* Layout: one column of full-width bands that alternate white and soft-blue wall, each holding a 1160px wrap. */
+&{
+  --ground: #FFFFFF; --wall: #F2F5FF; --ink: #151A33; --muted: #4B5270;
+  --cobalt: #2457E6; --cobalt-deep: #1B45BA; --fuchsia: #D6127F; --fuchsia-deep: #A30E61;
+  --pink-tint: #FCE4F1; --blue-tint: #E3EBFF; --blue-tint-2: #D2DEFF; --line: #D9DFF2;
+  --floor: #D9DFF2; --floor-seam: #CBD3EC; --frame-black: #0D0D0D; --mat: #FFFFFF;
+  --display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --body: var(--font-montserrat), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --leaf: 16px 0 16px 0;
+  color-scheme: light;
+}
+&{ margin: 0; background: var(--ground); color: var(--ink); font-family: var(--body); font-weight: 500; font-size: 18px; line-height: 1.6; }
+img { display: block; max-width: 100%; height: auto; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.08; }
+h2 { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.15; }
+h3 { font-size: clamp(26px, 3vw, 32px); line-height: 1.2; }
+p { margin: 0; }
+.wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+.band { padding-block: clamp(56px, 8vw, 96px); }
+.band.wall { background: var(--wall); }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); }
+.muted { color: var(--muted); }
+.stack { display: flex; flex-direction: column; gap: 18px; }
+.skip { position: absolute; left: 16px; top: -80px; z-index: 20; background: var(--ink); color: #FFFFFF; padding: 12px 18px; border-radius: var(--leaf); font-weight: 700; }
+.skip:focus { top: 16px; }
+
+/* header */
+.top { padding-block: 20px; border-bottom: 2px solid var(--line); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 22px; color: var(--ink); text-decoration: none; }
+.top nav { display: flex; gap: 20px; }
+.top nav a { font-weight: 600; font-size: 16px; color: var(--ink); text-decoration: none; padding-block: 8px; }
+.top nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--fuchsia); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+/* buttons (locked: Cobalt to Fuchsia) */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: var(--leaf); font-weight: 700; font-size: 16px; text-decoration: none; transition: background-color .15s, color .15s; }
+.btn-main { background: linear-gradient(120deg, var(--cobalt), var(--fuchsia)); color: #FFFFFF; }
+.btn-main:hover { background: linear-gradient(120deg, var(--cobalt-deep), var(--fuchsia-deep)); }
+.btn-soft { background: var(--blue-tint); color: var(--cobalt-deep); }
+.btn-soft:hover { background: var(--blue-tint-2); color: var(--ink); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline-offset: 3px; }
+.actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
+/* ===== the frame: near-black moulding, white mat, cut bevel ===== */
+.frame { --fw: 20px; --mw: 56px; --bw: 2px;
+  position: relative; display: inline-block; background: var(--frame-black); padding: var(--fw);
+  box-shadow: 0 28px 50px -18px rgba(21, 26, 51, 0.55), 0 6px 14px rgba(21, 26, 51, 0.2); }
+.frame::before, .frame::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.frame::before { background: linear-gradient(to top right, rgba(255, 255, 255, 0.12), transparent 45%, rgba(255, 255, 255, 0.06)); }
+.frame::after { background: linear-gradient(to bottom left, rgba(0, 0, 0, 0.4), transparent 50%, rgba(0, 0, 0, 0.55)); }
+.mat { position: relative; z-index: 1; display: block; background: var(--mat); padding: var(--mw);
+  /* the moulding lip shades the top of the mat, then a soft falloff all around */
+  box-shadow: inset 0 4px 6px -3px rgba(0, 0, 0, 0.35), inset 3px 0 5px -4px rgba(0, 0, 0, 0.25), inset 0 0 22px rgba(0, 0, 0, 0.07); }
+/* the bevel: CSS borders meet at 45 degrees, just like a mat cutter. Top faces down (shade), bottom faces up (catches light). */
+.bevel { position: relative; display: block; border: var(--bw) solid; border-color: #C9CBCF #E4E6E9 #FBFBFC #D8DADD; }
+.bevel::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35); pointer-events: none; }
+.bevel img { width: 100%; }
+.plaque { display: inline-flex; flex-direction: column; gap: 2px; background: #FFFFFF; border: 2px solid var(--line); padding: 10px 14px; line-height: 1.35; }
+.plaque b { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; }
+.plaque span { font-size: 14px; font-weight: 600; color: var(--muted); }
+.plaque strong { font-size: 15px; font-weight: 700; }
+
+/* ===== 1. hero: the crooked frame ===== */
+.hero { position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero .lede { max-width: 34ch; }
+.hero-text, .hero-art { position: relative; z-index: 1; min-width: 0; }
+.hero-art { display: flex; flex-direction: column; align-items: center; gap: 24px; padding-top: 76px; }
+.hang { position: relative; width: min(100%, 470px); transform: rotate(-1.2deg); transform-origin: 50% -64px; transition: transform .6s cubic-bezier(.3, 1.4, .5, 1); }
+.hang:hover { transform: rotate(0deg); }
+.hang .frame { display: block; }
+.hang .frame { --fw: 18px; --mw: clamp(30px, 6vw, 52px); }
+.wire { position: absolute; left: 6%; right: 6%; top: -64px; height: 66px; }
+.wire svg { width: 100%; height: 100%; overflow: visible; }
+.nail { position: absolute; left: 50%; top: -70px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; background: var(--ink); }
+.hero-art .plaque { align-self: flex-end; }
+
+/* ===== 2. packages: wall labels ===== */
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; margin-bottom: 48px; }
+.section-head .note { max-width: 32ch; }
+.pkgs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; align-items: end; }
+.pkg { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; min-width: 0; }
+.pkg .frame { --fw: 14px; --mw: clamp(22px, 3vw, 34px); --bw: 2px; width: 100%; }
+.label { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 3px solid var(--fuchsia); }
+.label .medium { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; color: var(--muted); }
+.label .count { font-size: 15px; font-weight: 600; color: var(--muted); }
+.label .price { margin-top: 4px; font-size: 22px; font-weight: 700; color: var(--fuchsia-deep); }
+
+/* ===== 3. the hallway: a real gallery wall, concrete floor, and lighting ===== */
+.hall-head { padding-block: clamp(56px, 8vw, 96px) 32px; }
+.hall-head p { margin-top: 12px; max-width: 46ch; }
+.hall { position: relative; background: #F3F4F6 url(/textures/wall.webp) 0 0 / 1024px 540px repeat; }
+.hall-stage { position: relative; overflow-x: auto; scroll-snap-type: x mandatory; border-bottom: 72px solid #A9ACB1; }
+.floor-persp, .benches, .fixture, .beam, .rail-top, .baseboard { display: none; }
+.track { position: relative; width: max-content; }
+.frames { list-style: none; margin: 0; padding: 48px 16px; display: flex; gap: 32px; align-items: center; }
+.frames li { scroll-snap-align: center; flex: none; position: relative; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.frames li.spacer { display: none; }
+.frames .frame { --fw: 12px; --mw: 26px; --bw: 2px; }
+.frames .p img { width: 52vw; max-width: 240px; }
+.frames .l img { width: 66vw; max-width: 320px; }
+
+@supports (animation-timeline: view()) {
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .hall { --td: 300vw; height: 480vh; view-timeline: --hall block; background: #2A2C31; }
+  .hall-stage { position: sticky; top: 0; height: 100vh; overflow: hidden; scroll-snap-type: none; border-bottom: 0; }
+  .floor-persp, .benches, .fixture, .beam, .rail-top, .baseboard { display: block; }
+  .track, .floor-plane, .benches { will-change: transform; animation-timeline: --hall; animation-range: contain 0% contain 100%; animation-timing-function: linear; animation-fill-mode: both; }
+  /* the wall travels with the frames, because the frames hang on it */
+  .track { position: absolute; top: 0; left: 0; height: 74%; animation-name: ps-track;
+    background: #F3F4F6 url(/textures/wall.webp) 0 0 / 1024px 540px repeat; }
+  .rail-top { position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #1A1B1F; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); z-index: 4; }
+  .baseboard { position: absolute; left: 0; right: 0; bottom: 0; height: 2.2vh; background: linear-gradient(#FFFFFF, #E9EAEC); box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08); z-index: 4; }
+  .frames { position: relative; height: 100%; padding: 0; gap: 8vw; align-items: stretch; }
+  .frames li { justify-content: center; padding-top: 4vh; }
+  .frames li.spacer { display: block; width: 24vw; }
+  .frames .frame { --fw: 1.7vh; --mw: 4.4vh; --bw: 2px; z-index: 1; }
+  .frames .plaque { position: relative; z-index: 1; }
+  .frames .p img { width: auto; max-width: none; height: 28vh; }
+  .frames .l img { width: auto; max-width: none; height: 20vh; }
+  /* ambient shade: every column of wall is dim, except where its light lands */
+  .frames li::after { content: ""; position: absolute; top: 0; bottom: 0; left: -4vw; right: -4vw; z-index: 3; pointer-events: none;
+    background: radial-gradient(ellipse 66% 78% at 50% 34%, rgba(12, 13, 18, 0) 0%, rgba(12, 13, 18, 0) 46%, rgba(12, 13, 18, 0.16) 68%, rgba(12, 13, 18, 0.4) 100%); }
+  .frames li.spacer::after { background: rgba(12, 13, 18, 0.42); }
+  .fixture { position: absolute; top: 0; left: 50%; width: 22px; height: 30px; margin-left: -11px; background: linear-gradient(90deg, #26272C, #44464D 45%, #1A1B1F); border-radius: 3px 3px 9px 9px; z-index: 5; transform: rotate(14deg); transform-origin: 50% 0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35); }
+  .beam { position: absolute; top: 24px; left: 50%; width: 64vh; height: 62vh; margin-left: -32vh; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 50% 90% at 50% 0, rgba(255, 252, 245, 0.55), rgba(255, 252, 245, 0) 70%);
+    clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); }
+  /* concrete floor in real perspective; its far edge moves with the wall */
+  .floor-persp { position: absolute; left: 0; right: 0; bottom: 0; height: 26%; perspective: 520px; perspective-origin: 50% 0; overflow: hidden; background: #8E9196; }
+  .floor-plane { position: absolute; top: 0; left: -60vw; width: calc(var(--td) + 240vw); height: 1600px; transform-origin: 50% 0;
+    background: url(/textures/floor.webp) 0 0 / 640px 640px repeat; animation-name: ps-floor; }
+  .floor-persp::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(rgba(12, 13, 18, 0.38), rgba(12, 13, 18, 0.05) 22%, rgba(255, 255, 255, 0.06) 55%, rgba(12, 13, 18, 0.22)); }
+  /* benches in the foreground pass faster */
+  .benches { position: absolute; left: 0; bottom: 1.5vh; height: 15vh; width: 100%; z-index: 6; animation-name: ps-benches; }
+  .bench { position: absolute; bottom: 0; width: 27vw; height: auto; filter: brightness(0.86) saturate(0.95); }
+}
+}
+
+
+
+
+/* ===== 4. process: picture rail ===== */
+.rail-wrap { position: relative; margin-top: 48px; }
+.rail { height: 12px; background: var(--ink); border-radius: 6px; }
+.steps { list-style: none; margin: 0; padding: 70px 0 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.steps li { position: relative; background: #FFFFFF; border: 2px solid var(--line); border-radius: var(--leaf); padding: 24px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 20px rgba(21, 26, 51, 0.08); min-width: 0; }
+.steps .hook { position: absolute; left: 50%; top: -70px; width: 28px; height: 10px; margin-left: -14px; background: var(--ink); }
+.steps .wires { position: absolute; left: 10%; right: 10%; top: -62px; height: 62px; }
+.steps .wires svg { width: 100%; height: 100%; overflow: visible; }
+.steps .num { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia-deep); }
+.steps p { font-size: 17px; line-height: 1.55; color: var(--muted); }
+
+/* ===== 5. gift cards: admission ticket ===== */
+.gift .wrap { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 56px; align-items: center; }
+.tickets { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.ticket { --punch: radial-gradient(circle at 0 50%, transparent 17px, #000 18px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 17px, #000 18px) right / 51% 100% no-repeat;
+  display: grid; grid-template-columns: 160px 1fr; background: #FFFFFF; border: 2px solid var(--line); border-radius: var(--leaf); overflow: hidden; -webkit-mask: var(--punch); mask: var(--punch); }
+.stub { background: linear-gradient(160deg, var(--cobalt), var(--fuchsia)); color: #FFFFFF; padding: 24px 22px 24px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-right: 3px dashed #FFFFFF; }
+.stub .admit { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.stub .gc { font-family: var(--display); font-size: 28px; font-weight: 600; line-height: 1.1; }
+.stub .no { font-size: 13px; font-weight: 600; }
+.ticket-body { padding: 24px 30px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ticket-body .good { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.ticket-body .price { font-size: 24px; font-weight: 700; color: var(--fuchsia-deep); }
+
+footer { border-top: 2px solid var(--line); padding-block: 32px; font-size: 15px; color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { .hang { transition: none; } }
+@media (max-width: 899px) {
+  .hero .wrap, .gift .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .pkgs { grid-template-columns: 1fr; gap: 56px; }
+  .pkg .frame { max-width: 380px; }
+  .hang { width: 88%; }
+  .steps { grid-template-columns: 1fr 1fr; padding-top: 0; }
+  .rail, .steps .hook, .steps .wires { display: none; }
+}
+@media (max-width: 599px) {
+  .steps { grid-template-columns: 1fr; }
+  .ticket { grid-template-columns: 112px 1fr; }
+  .stub { padding: 18px 14px 18px 24px; }
+  .stub .gc { font-size: 22px; }
+  .ticket-body { padding: 18px 18px 18px 22px; }
+}
+
+}
+@keyframes ps-track { from { transform: translateX(0); } to { transform: translateX(calc(-100% + 100vw)); } }
+@keyframes ps-floor { from { transform: rotateX(80deg) translateX(0); } to { transform: rotateX(80deg) translateX(calc(var(--td) * -1)); } }
+@keyframes ps-benches { from { transform: translateX(0); } to { transform: translateX(calc(var(--td) * -1.5)); } }

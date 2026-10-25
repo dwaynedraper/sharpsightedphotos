@@ -3,14 +3,15 @@ import { Playfair_Display, Montserrat } from 'next/font/google';
 import { Suspense } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
-import { Providers } from './providers';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import HubReturnToast from '@/components/HubReturnToast';
+import Motion from '@/components/Motion';
+import ClickTracker from '@/components/ClickTracker';
 
 const playfair = Playfair_Display({
   variable: '--font-playfair',
   subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 });
 
@@ -26,18 +27,18 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://sharpsighted.photos'),
   title: {
     template: '%s | Sharp Sighted Photos',
-    default: 'Sharp Sighted Photos | Luxury Story Portraits in DFW',
+    default: 'Sharp Sighted Photos | Story Portraits, Headshots, and Films in DFW',
   },
-  description: 'Luxury story portraits and concierge photography for people who don\'t fit templates. On-location, on your schedule, in DFW.',
-  keywords: ['Luxury Portrait Photography', 'Story Portraits', 'DFW Photographer', 'Dean Draper', 'On-Location Portraits', 'Corporate Headshots DFW'],
+  description: 'Story portraits for people. Headshots and films for businesses. On location across Dallas Fort Worth with Dean Draper.',
+  keywords: ['Story Portraits', 'Lifestyle Portraits DFW', 'Corporate Headshots DFW', 'Brand Films DFW', 'Testimonial Videos', 'Dean Draper'],
   openGraph: {
     title: 'Sharp Sighted Photos',
-    description: 'Luxury story portraits for people who don\'t fit templates.',
+    description: 'Story portraits for people. Headshots and films for businesses.',
     url: 'https://sharpsighted.photos',
     siteName: 'Sharp Sighted Photos',
     locale: 'en_US',
     type: 'website',
-    images: [{ url: '/images/hero.jpg', alt: 'Sharp Sighted Photos — luxury story portraits in DFW' }],
+    images: [{ url: '/images/hero.jpg', alt: 'Sharp Sighted Photos, story portraits in DFW' }],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
@@ -62,7 +63,7 @@ const jsonLd = {
       '@id': 'https://sharpsighted.photos/#business',
       name: 'Sharp Sighted Photos',
       legalName: 'Sharp Sighted Studio',
-      description: 'On-location personal branding photographer and portrait studio serving the 121 corridor and greater DFW. Story sessions, corporate headshots, and executive portraits by Dean Draper.',
+      description: 'On-location story portraits, corporate headshots, and brand films serving the 121 corridor and greater DFW, by Dean Draper.',
       url: 'https://sharpsighted.photos',
       telephone: '+12142335338',
       email: 'dean@sharpsightedstudio.com',
@@ -93,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
@@ -108,15 +109,13 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className={`${playfair.variable} ${montserrat.variable} antialiased font-sans`}>
-        <Providers>
-          <Navbar />
-          {children}
-          <Footer />
-          <Suspense>
-            <HubReturnToast />
-          </Suspense>
-        </Providers>
+      <body className={`${playfair.variable} ${montserrat.variable} antialiased`}>
+        {children}
+        <Motion />
+        <ClickTracker />
+        <Suspense>
+          <HubReturnToast />
+        </Suspense>
         <SpeedInsights />
       </body>
     </html>
