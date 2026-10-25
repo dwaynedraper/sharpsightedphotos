@@ -11,7 +11,7 @@ const TARGETS = [
   'main h2', 'main .lede', 'main .stack > p', 'main .eyebrow', 'main .anchor',
   'main .values > li', 'main .pkgs > li', 'main .steps > li', 'main .pieces > li', 'main .faq details',
   'main .markers > li', 'main .orders > article', 'main .tickets > .ticket', 'main .clips-v > li',
-  'main .sheet', 'main .table', 'main .panel', 'main .np', 'main .review', 'main .door', 'main .clapper-board',
+  'main .sheet', 'main .table', 'main .panel', 'main .np', 'main .review', 'main .door', 'main .clapper-board', 'main .heirloom',
 ].join(',');
 
 export default function Motion() {

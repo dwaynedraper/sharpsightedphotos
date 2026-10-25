@@ -63,7 +63,7 @@ export default function Home() {
       </main>
       <footer className="home-foot">
         <span>Sharp Sighted Photos · {site.phoneDisplay} · <a href={`mailto:${site.email}`}>{site.email}</a></span>
-        <nav aria-label="Footer"><Link href="/portraits">Story Portraits</Link><Link href="/business/headshots">Headshots</Link><Link href="/business/films">Films</Link><Link href="/gift">Gift Cards</Link><Link href="/contact">Contact</Link></nav>
+        <nav aria-label="Footer"><Link href="/portraits">Story Portraits</Link><Link href="/business/headshots">Headshots</Link><Link href="/business/films">Films</Link><Link href="/gift">Gift Sessions</Link><Link href="/contact">Contact</Link></nav>
       </footer>
     </div>
   );

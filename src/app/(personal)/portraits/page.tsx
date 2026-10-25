@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import PsNav from '@/components/ps/PsNav';
-import Frame from '@/components/ps/Frame';
-import Plaque from '@/components/ps/Plaque';
+import Photo from '@/components/ps/Photo';
+import PhotoCard, { icons } from '@/components/ps/PhotoCard';
+import HeirloomBook from '@/components/ps/HeirloomBook';
 import Hallway from '@/components/ps/Hallway';
 import Tickets from '@/components/ps/Tickets';
 import { packages, portraitFaq } from '@/content/portraits';
@@ -23,7 +24,7 @@ const wire = (
 const steps = [
   { title: 'Connection Call', meta: '15 minutes · Free', text: "A short call to see if we're a fit. Ask anything you still want to know." },
   { title: 'Discovery Hour', meta: 'Over coffee or drinks', text: 'You tell me your story, and we plan the scene together. The $200 goes toward your session when you book within 30 days.' },
-  { title: 'Session and reveal', meta: 'Where your story lives', text: 'We shoot where you feel like yourself. Then every image is printed and laid out, and you pick your framed pieces by feel.' },
+  { title: 'Session and prints', meta: 'Where your story lives', text: 'We shoot where you feel like yourself. I edit every image by hand, then choose your framed prints from the full spread.' },
 ];
 
 export default function PortraitsPage() {
@@ -62,16 +63,11 @@ export default function PortraitsPage() {
               <p className="anchor">Sessions start at <b>$900</b>. Founding rates run through December 25.</p>
               <div className="actions">
                 <a className="btn btn-main" href={site.connectionCall}>Book a free Connection Call</a>
-                <Link className="btn btn-soft" href="/gift">Give a gift card</Link>
+                <Link className="btn btn-soft" href="/gift">Give a Gift Session</Link>
               </div>
             </div>
             <div className="hero-art">
-              <div className="hang">
-                <span className="nail" aria-hidden="true" />
-                <span className="wire" aria-hidden="true">{wire}</span>
-                <Frame src="/images/web/story.webp" width={1400} height={933} alt="Two friends bump fists in front of a glowing fireplace" sizes="(min-width: 900px) 420px, 80vw" priority style={{ display: 'block' }} />
-              </div>
-              <Plaque title="Fireside Friends" line="Story portrait" strong="Sessions from $900" />
+              <Photo src="/images/web/story.webp" width={1400} height={933} alt="Two friends bump fists in front of a glowing fireplace" sizes="(min-width: 900px) 540px, 92vw" priority />
             </div>
           </div>
         </section>
@@ -98,24 +94,27 @@ export default function PortraitsPage() {
         <section className="band wall" aria-labelledby="value-title">
           <div className="wrap">
             <div className="stack" style={{ gap: 10 }}>
-              <p className="eyebrow">What changes</p>
-              <h2 id="value-title">Photos of you doing the thing.</h2>
+              <p className="eyebrow">What you get</p>
+              <h2 id="value-title">Photos of you doing what you love.</h2>
             </div>
             <ul className="values">
               <li>
-                <Frame src="/images/web/vp-location.webp" width={500} height={666} alt="A portrait session on location" sizes="(min-width: 900px) 300px, 80vw" />
-                <h3>Wherever your story lives</h3>
-                <p className="muted">A workshop, a rooftop, a chess table in the park. The place is part of the story, so that is where we shoot.</p>
+                <PhotoCard image={{ src: '/images/web/vp-location.webp', width: 500, height: 666, alt: 'A portrait session on location' }} badge={icons.place}>
+                  <h3>Wherever your story lives</h3>
+                  <p className="muted">A workshop, a rooftop, a chess table in the park. The place is part of the story, so that is where we shoot.</p>
+                </PhotoCard>
               </li>
               <li>
-                <Frame src="/images/web/vp-schedule.webp" width={500} height={333} alt="A portrait session after dark" sizes="(min-width: 900px) 300px, 80vw" />
-                <h3>On your schedule</h3>
-                <p className="muted">Sunrise, midday, or after dark. We shoot when you are most yourself, not when it suits a calendar.</p>
+                <PhotoCard image={{ src: '/images/web/vp-schedule.webp', width: 500, height: 333, alt: 'A portrait session after dark' }} badge={icons.time}>
+                  <h3>On your schedule</h3>
+                  <p className="muted">Sunrise, midday, or after dark. We shoot when you are most yourself, not when it suits a calendar.</p>
+                </PhotoCard>
               </li>
               <li>
-                <Frame src="/images/web/vp-discovery.webp" width={500} height={749} alt="Planning a session over coffee" sizes="(min-width: 900px) 300px, 80vw" />
-                <h3>A story, not a pose</h3>
-                <p className="muted">You tell me what is happening. I stage the scene, you live it, and I catch the moment.</p>
+                <PhotoCard image={{ src: '/images/web/vp-discovery.webp', width: 500, height: 749, alt: 'Planning a session over coffee' }} badge={icons.story}>
+                  <h3>A story, not a pose</h3>
+                  <p className="muted">You tell me what is happening. I stage the scene, you live it, and I catch the moment.</p>
+                </PhotoCard>
               </li>
             </ul>
           </div>
@@ -125,7 +124,7 @@ export default function PortraitsPage() {
         <section className="band" aria-labelledby="guide-title">
           <div className="wrap two">
             <div className="stack">
-              <p className="eyebrow">Your guide</p>
+              <p className="eyebrow">Your photographer</p>
               <h2 id="guide-title">I won&apos;t hand you a list of poses.</h2>
               <p className="muted">I&apos;m Dean. I ask you to be yourself and ignore the camera. You tell me your story in real time. I stage a scene around it, then get out of the way.</p>
               <p className="muted">I have spent over a decade learning to shoot anywhere, in any light. I&apos;m also neurodivergent, so I know what it is like to need direct communication and real accommodation.</p>
@@ -133,8 +132,7 @@ export default function PortraitsPage() {
               <p className="sig"><b>Dean Draper</b><span>Visual Biographer</span></p>
             </div>
             <div className="guide-art">
-              <Frame src="/images/web/portrait3.webp" width={1143} height={1600} alt="Dean Draper kneeling with a black dog on a white backdrop" sizes="(min-width: 900px) 360px, 70vw" />
-              <Plaque title="Dean Draper" line="Founder, Sharp Sighted" />
+              <Photo src="/images/web/portrait3.webp" width={1143} height={1600} alt="Dean Draper kneeling with a black dog on a white backdrop" sizes="(min-width: 900px) 460px, 92vw" />
             </div>
           </div>
         </section>
@@ -144,7 +142,7 @@ export default function PortraitsPage() {
           <div className="wrap">
             <div className="stack" style={{ gap: 10 }}>
               <p className="eyebrow">How it works</p>
-              <h2 id="rail-title">Three steps from hello to hanging.</h2>
+              <h2 id="rail-title">Three steps to your story portraits.</h2>
             </div>
             <div className="rail-wrap">
               <div className="rail" aria-hidden="true" />
@@ -168,7 +166,7 @@ export default function PortraitsPage() {
           <div className="wrap">
             <div className="section-head">
               <div className="stack" style={{ gap: 10 }}>
-                <p className="eyebrow">Now Showing</p>
+                <p className="eyebrow">Sessions and prices</p>
                 <h2 id="pkg-title">Three ways to tell your story.</h2>
               </div>
               <p className="note muted">Founding rates through December 25, 2026. {site.taxNote}</p>
@@ -176,17 +174,15 @@ export default function PortraitsPage() {
             <ul className="pkgs">
               {packages.map((p) => (
                 <li className="pkg" key={p.name}>
-                  <Frame src={p.image.src} width={p.image.width} height={p.image.height} alt={p.image.alt} sizes="(min-width: 900px) 320px, 80vw" />
-                  <div className="label">
+                  <PhotoCard image={p.image} badge={p.price} badgeLabel={`${p.price} founding rate`}>
                     <h3>{p.name}</h3>
                     <span className="medium">Story portrait session</span>
                     <span className="count">{p.count}</span>
-                    <span className="price">{p.price}</span>
-                  </div>
-                  <details className="includes">
-                    <summary>What&apos;s included</summary>
-                    <ul>{p.includes.map((x) => <li key={x}>{x}</li>)}</ul>
-                  </details>
+                    <details className="includes">
+                      <summary>What&apos;s included</summary>
+                      <ul>{p.includes.map((x) => <li key={x}>{x}</li>)}</ul>
+                    </details>
+                  </PhotoCard>
                 </li>
               ))}
             </ul>
@@ -201,11 +197,11 @@ export default function PortraitsPage() {
         <section className="band" aria-labelledby="disc-title">
           <div className="wrap two">
             <div className="disc-art">
-              <Frame src="/images/web/discovery.webp" width={1024} height={1024} alt="Two people talking over drinks in a warm lounge" sizes="(min-width: 900px) 420px, 80vw" />
+              <Photo src="/images/web/discovery.webp" width={1024} height={1024} alt="Two people talking over drinks in a warm lounge" sizes="(min-width: 900px) 460px, 92vw" />
             </div>
             <div className="stack">
-              <p className="eyebrow">The Discovery Hour</p>
-              <h2 id="disc-title">Where the story begins.</h2>
+              <p className="eyebrow">Where the story begins</p>
+              <h2 id="disc-title">Every session starts with a Discovery Hour.</h2>
               <p className="muted">Most photographers ask you to step into their studio, stand on their mark, and smile. I ask you to stay in your world.</p>
               <p className="muted">Every session starts with an hour over coffee or drinks. We uncover your story and find the places where you feel most alive. Maybe that is a chess game in the park. Maybe it is a dark whiskey room in your favorite jacket.</p>
               <p className="muted">By the time a camera comes out, we are not strangers anymore. That is when the real you shows up.</p>
@@ -216,26 +212,57 @@ export default function PortraitsPage() {
         <section className="band wall" aria-labelledby="pieces-title">
           <div className="wrap">
             <div className="stack" style={{ gap: 10 }}>
-              <p className="eyebrow">The pieces</p>
-              <h2 id="pieces-title">Made to hang for decades.</h2>
+              <p className="eyebrow">Prints and add-ons</p>
+              <h2 id="pieces-title">Prints come with every session. You can add more.</h2>
+              <p className="muted pieces-lede">Every session ends in pieces you can hold. No print credits, and no files left sitting on a hard drive.</p>
             </div>
             <ul className="pieces">
-              <li><h3>Framed prints</h3><p className="muted">Every package comes framed and ready to hang. You choose the pieces by feel from a full proof spread.</p></li>
-              <li><h3>Story cards</h3><p className="muted">Every image as a 4×6 print, in a box. Easy to share, easy to keep close.</p></li>
-              <li><h3>The Heirloom Book</h3><p className="muted">A layflat hardcover book included with the Epic. The piece your family reaches for and keeps.</p></li>
-              <li><h3>The Disasterpiece</h3><p className="muted">A 40×60 print on ChromaLuxe aluminum with a sheer surface, so the image glows. Installed in your home in DFW. $5,000.</p></li>
+              <li>
+                <span className="kind">In every session</span>
+                <h3>Framed prints</h3>
+                <p className="muted">Your story hangs in plain sight for the next twenty years. I choose the images from the full proof spread and design the set to hang together.</p>
+              </li>
+              <li>
+                <span className="kind">In every session</span>
+                <h3>Story cards</h3>
+                <p className="muted">Every image as a 4×6 print, in a box. Easy to pass around, easy to keep close.</p>
+              </li>
+              <li>
+                <span className="kind">Add-on · <span className="cost">$3,000</span></span>
+                <h3>The Disasterpiece</h3>
+                <p className="muted">A 40×60 print on ChromaLuxe aluminum, so the image glows. I install it in your home anywhere in DFW.</p>
+              </li>
+              <li>
+                <span className="kind">Add-on</span>
+                <h3>Additional prints</h3>
+                <p className="muted">Another framed print, a bigger size, or a second box of story cards. Every piece is also sold on its own.</p>
+              </li>
             </ul>
+            <div className="book-feature">
+              <HeirloomBook
+                cover={{ src: '/images/web/portrait4.webp', width: 1600, height: 1060, alt: 'A couple smiles on a beach next to a pier' }}
+                title="The Heirloom Book"
+                line="Open the albums in the gallery"
+                href="/gallery"
+              />
+              <div className="stack">
+                <span className="kind">In the Epic · Add to any session</span>
+                <h3>The Heirloom Book</h3>
+                <p className="muted">A layflat hardcover album of your whole session, made to be passed down. The Epic includes one. You can add one to the Verse or the Story.</p>
+                <p className="muted">Every album in the gallery opens the same way. Click a cover and turn through the prints.</p>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* 9. Gift cards */}
+        {/* 9. Gift Sessions */}
         <section className="band gift" aria-labelledby="gift-title">
           <div className="wrap">
             <div className="stack">
-              <p className="eyebrow">Gift Cards</p>
-              <h2 id="gift-title">Give someone their own show.</h2>
-              <p className="muted">Only 10 gift cards this season. Each one is good for a Verse or a Story session.</p>
-              <div><Link className="btn btn-main" href="/gift">See gift cards</Link></div>
+              <p className="eyebrow">Gift Sessions</p>
+              <h2 id="gift-title">Give a story portrait session as a gift.</h2>
+              <p className="muted">They get a ticket to their own session, good for a Verse or a Story.</p>
+              <div><Link className="btn btn-main" href="/gift">Give a Gift Session</Link></div>
             </div>
             <Tickets />
           </div>
@@ -244,7 +271,7 @@ export default function PortraitsPage() {
         {/* 10. FAQ */}
         <section className="band" aria-labelledby="faq-title">
           <div className="wrap faq-wrap">
-            <h2 id="faq-title">You might be wondering.</h2>
+            <h2 id="faq-title">Questions before you book.</h2>
             <div className="faq">
               {portraitFaq.map((f) => (
                 <details key={f.q}>

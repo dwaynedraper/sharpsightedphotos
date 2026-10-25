@@ -61,10 +61,10 @@ export const hallway = [
 
 export const portraitFaq = [
   { q: 'What if my story needs an odd location or an odd time?', a: 'Then we are a good match. If the place or the hour matters to your story, we make it happen.' },
-  { q: 'I hate being photographed. Will this work for me?', a: 'That is common. You will not be posed. You tell me what is happening, and I catch it. The Discovery Hour is where we figure out what made past sessions uncomfortable.' },
+  { q: 'I hate being photographed. Will this work for me?', a: "A lot of people feel that way. Instead of asking you to pose, I have you do your thing, whatever that is, and I capture you being you. I may direct small movements, but you won't be twisted into a pretzel unless you want to be. The Discovery Hour also helps me find out what made past sessions feel uncomfortable." },
   { q: 'I need accommodations. Will you follow through?', a: 'Yes. Tell me what you need during the Discovery Hour, and I design the session around it.' },
   { q: "I'm loud, bold, and kind of a lot. Is that okay?", a: 'Absolutely. Bring all of it. My job is to capture you, not sand you down.' },
-  { q: 'Can I bring someone with me?', a: 'Yes. If a friend, partner, or support person helps, bring them.' },
+  { q: 'Can I bring someone with me?', a: 'Yes. If a friend, partner, or support person helps, bring them. Please limit this to one person.' },
   { q: 'What if I need to cancel or reschedule?', a: 'You can cancel within 3 business days of booking for a full refund. After that, your booking fee is non-refundable. With 14 or more days of notice, the rest of your deposit is refunded. With less notice, it moves to a new date within 90 days. Weather never costs you anything.' },
   { q: 'Do you photograph families, weddings, or newborns?', a: 'Traditional family, wedding, and newborn work is not my focus. I am happy to refer you to someone who specializes in it. My heart is with individuals who want to go deeper.' },
 ];

@@ -129,18 +129,20 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline
   .frames .plaque { position: relative; z-index: 1; }
   .frames .p img { width: auto; max-width: none; height: 28vh; }
   .frames .l img { width: auto; max-width: none; height: 20vh; }
-  /* ambient shade: every column of wall is dim, except where its light lands */
-  .frames li::after { content: ""; position: absolute; top: 0; bottom: 0; left: -4vw; right: -4vw; z-index: 3; pointer-events: none;
-    background: radial-gradient(ellipse 66% 78% at 50% 34%, rgba(12, 13, 18, 0) 0%, rgba(12, 13, 18, 0) 46%, rgba(12, 13, 18, 0.16) 68%, rgba(12, 13, 18, 0.4) 100%); }
-  .frames li.spacer::after { background: rgba(12, 13, 18, 0.42); }
+  /* ambient shade: one layer over the whole wall, photos included. Hallway.tsx cuts a soft hole for each light. */
+  .shade { display: none; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+    background: linear-gradient(rgba(12, 13, 18, 0.36), rgba(12, 13, 18, 0.3) 40%, rgba(12, 13, 18, 0.44));
+    mask-repeat: no-repeat; -webkit-mask-repeat: no-repeat; mask-composite: intersect; -webkit-mask-composite: source-in; }
+  .shade.on { display: block; }
   .fixture { position: absolute; top: 0; left: 50%; width: 22px; height: 30px; margin-left: -11px; background: linear-gradient(90deg, #26272C, #44464D 45%, #1A1B1F); border-radius: 3px 3px 9px 9px; z-index: 5; transform: rotate(14deg); transform-origin: 50% 0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35); }
   .beam { position: absolute; top: 24px; left: 50%; width: 64vh; height: 62vh; margin-left: -32vh; z-index: 0; pointer-events: none;
     background: radial-gradient(ellipse 50% 90% at 50% 0, rgba(255, 252, 245, 0.55), rgba(255, 252, 245, 0) 70%);
     clip-path: polygon(46% 0, 54% 0, 100% 100%, 0 100%); }
   /* concrete floor in real perspective; its far edge moves with the wall */
-  .floor-persp { position: absolute; left: 0; right: 0; bottom: 0; height: 26%; perspective: 520px; perspective-origin: 50% 0; overflow: hidden; background: #8E9196; }
+  /* a plain gray floor with barely any texture, so the benches carry the depth */
+  .floor-persp { position: absolute; left: 0; right: 0; bottom: 0; height: 26%; perspective: 520px; perspective-origin: 50% 0; overflow: hidden; background: #A5A6A9; }
   .floor-plane { position: absolute; top: 0; left: -60vw; width: calc(var(--td) + 240vw); height: 1600px; transform-origin: 50% 0;
-    background: url(/textures/floor.webp) 0 0 / 640px 640px repeat; animation-name: ps-floor; }
+    background: #A6A7AA url(/textures/floor-soft.webp) 0 0 / 640px 640px repeat; animation-name: ps-floor; }
   .floor-persp::after { content: ""; position: absolute; inset: 0; pointer-events: none;
     background: linear-gradient(rgba(12, 13, 18, 0.38), rgba(12, 13, 18, 0.05) 22%, rgba(255, 255, 255, 0.06) 55%, rgba(12, 13, 18, 0.22)); }
   /* benches in the foreground pass faster */
@@ -163,15 +165,15 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline
 .steps .num { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia-deep); }
 .steps p { font-size: 17px; line-height: 1.55; color: var(--muted); }
 
-/* ===== 5. gift cards: admission ticket ===== */
+/* ===== 5. Gift Sessions: admission ticket ===== */
 .gift .wrap { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 56px; align-items: center; }
 .tickets { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .ticket { --punch: radial-gradient(circle at 0 50%, transparent 17px, #000 18px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 17px, #000 18px) right / 51% 100% no-repeat;
-  display: grid; grid-template-columns: 160px 1fr; background: #FFFFFF; border: 2px solid var(--line); border-radius: var(--leaf); overflow: hidden; -webkit-mask: var(--punch); mask: var(--punch); }
+  display: grid; grid-template-columns: 178px 1fr; background: #FFFFFF; border: 2px solid var(--line); border-radius: var(--leaf); overflow: hidden; -webkit-mask: var(--punch); mask: var(--punch); }
 .stub { background: linear-gradient(160deg, var(--cobalt), var(--fuchsia)); color: #FFFFFF; padding: 24px 22px 24px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-right: 3px dashed #FFFFFF; }
 .stub .admit { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 .stub .gc { font-family: var(--display); font-size: 28px; font-weight: 600; line-height: 1.1; }
-.stub .no { font-size: 13px; font-weight: 600; }
+.stub .edition { display: flex; flex-direction: column; font-size: 13px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
 .ticket-body { padding: 24px 30px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .ticket-body .good { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 .ticket-body .price { font-size: 24px; font-weight: 700; color: var(--fuchsia-deep); }
@@ -189,8 +191,9 @@ footer { border-top: 2px solid var(--line); padding-block: 32px; font-size: 15px
 }
 @media (max-width: 599px) {
   .steps { grid-template-columns: 1fr; }
-  .ticket { grid-template-columns: 112px 1fr; }
-  .stub { padding: 18px 14px 18px 24px; }
+  .ticket { grid-template-columns: 132px 1fr; }
+  .stub { padding: 18px 10px 18px 24px; }
+  .stub .edition { font-size: 11px; }
   .stub .gc { font-size: 22px; }
   .ticket-body { padding: 18px 18px 18px 22px; }
 }

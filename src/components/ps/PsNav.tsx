@@ -7,7 +7,7 @@ export default function PsNav({ current }: { current?: Current }) {
   const links: { key: Current; href: string; label: string }[] = [
     { key: 'portraits', href: '/portraits', label: 'Story Portraits' },
     { key: 'gallery', href: '/gallery', label: 'Gallery' },
-    { key: 'gift', href: '/gift', label: 'Gift Cards' },
+    { key: 'gift', href: '/gift', label: 'Gift Sessions' },
     { key: 'contact', href: '/contact', label: 'Contact' },
   ];
   return (

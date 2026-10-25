@@ -13,7 +13,7 @@ export default function PsFooter() {
           <p className="f-h">For You</p>
           <Link href="/portraits">Story Portraits</Link>
           <Link href="/gallery">Gallery</Link>
-          <Link href="/gift">Gift Cards</Link>
+          <Link href="/gift">Gift Sessions</Link>
           <Link href="/business">For Your Business</Link>
         </nav>
         <div>
