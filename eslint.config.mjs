@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Build and test helpers from the site overhaul. Not part of the app.
+    "tools/**",
+    "docs/**",
   ]),
 ]);
 

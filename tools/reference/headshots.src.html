@@ -1,0 +1,243 @@
+<title>Headshots Test Run</title>
+<meta name="description" content="Test run of the Sharp Sighted corporate headshots page.">
+<link rel="preload" href="fonts/playfair-display-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Layout: a photographer's proofing desk. Light table hero, contact sheet proof, lab order cards, a film strip of steps. */
+{{BASE}}
+:root { --table: #FBFCF8; --film: #1C1D1B; --film-edge: #C8F031; }
+
+/* film strip parts, used across the page */
+.film { position: relative; background: var(--film); padding: 26px 14px; }
+.film::before, .film::after { content: ""; position: absolute; left: 10px; right: 10px; height: 10px;
+  background: repeating-linear-gradient(90deg, transparent 0 10px, var(--holes, var(--table)) 10px 22px, transparent 22px 32px); border-radius: 2px; }
+.film::before { top: 8px; }
+.film::after { bottom: 8px; }
+.film .frames { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+.film .frames li { position: relative; flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+.film .shot { position: relative; }
+.film img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; }
+.film .edge { font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; color: var(--film-edge); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.flip { transform: scaleX(-1); }
+.mark { position: absolute; pointer-events: none; overflow: visible; }
+.mark.circle { inset: -12px -14px; width: calc(100% + 28px); height: calc(100% + 24px); }
+.mark.cross { inset: 10px; width: calc(100% - 20px); height: calc(100% - 20px); }
+
+/* ===== 1. hero: light table and loupe ===== */
+.hero .wrap { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+.hero .lede { max-width: 34ch; }
+.table { position: relative; padding: 40px 28px; background: radial-gradient(ellipse at 50% 45%, #FFFFFF 0%, var(--table) 55%, #E9ECE3 100%);
+  box-shadow: inset 0 0 0 8px #2B2F2B, inset 0 0 40px rgba(200, 240, 49, 0.12), 0 24px 40px -18px rgba(20, 22, 20, 0.45); min-width: 0; overflow: hidden; }
+.table .film { margin-block: 16px; box-shadow: 0 6px 10px rgba(20, 22, 20, 0.25); }
+.table .film:nth-child(1) { transform: rotate(-1.2deg) translateX(-10px); }
+.table .film:nth-child(2) { transform: rotate(0.8deg) translateX(16px); }
+.table .film:nth-child(3) { transform: rotate(-0.4deg); }
+.loupe { position: absolute; width: 170px; height: 170px; border-radius: 50%; left: 52%; top: 30%; pointer-events: none; z-index: 3;
+  border: 12px solid #1D1E1C; box-shadow: 0 0 0 3px #4D524C, 0 18px 28px rgba(20, 22, 20, 0.45), inset 0 0 18px rgba(0, 0, 0, 0.35);
+  background: #2B2F2B url(img/arms-960.webp) 50% 30% / 520px auto no-repeat; transition: left .08s linear, top .08s linear; }
+.loupe::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0) 45%); }
+.table-note { margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--muted); }
+
+/* ===== 2. featured set: contact sheet ===== */
+.proof .wrap { display: grid; grid-template-columns: 0.75fr 1.6fr; gap: 48px; align-items: center; }
+.sheet { background: var(--graphite); padding: 26px 24px 30px; min-width: 0; }
+.sheet .film { --holes: var(--graphite); padding: 22px 0; background: transparent; }
+.sheet .film::before, .sheet .film::after { --holes: #3A3D39; background: repeating-linear-gradient(90deg, transparent 0 10px, #3A3D39 10px 22px, transparent 22px 32px); }
+.sheet-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--on-dark-muted); margin-bottom: 6px; }
+.sheet .keeper .edge { color: var(--volt); }
+.sheet .note { position: absolute; font-family: "Comic Sans MS", "Marker Felt", "Segoe Print", cursive; font-size: 20px; font-weight: 700; color: var(--volt); transform: rotate(-6deg); }
+
+/* ===== 3. packages: lab order cards ===== */
+.orders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.order { background: var(--surface); display: flex; flex-direction: column; min-width: 0; }
+.order-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 22px; background: var(--graphite); color: var(--volt); font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; }
+.order-body { padding: 22px 22px 28px; display: flex; flex-direction: column; gap: 14px; }
+.order dl { margin: 0; }
+.order dl div { display: flex; justify-content: space-between; gap: 16px; padding-block: 10px; border-top: 2px solid var(--line); }
+.order dt { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.order dd { margin: 0; font-size: 16px; font-weight: 700; text-align: right; }
+.order .rate { background: var(--volt); padding: 1px 6px; }
+.check { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; }
+.check::before { content: "✓"; display: inline-grid; place-items: center; width: 20px; height: 20px; border: 2px solid var(--graphite); font-size: 13px; font-weight: 700; }
+
+/* ===== 4. process: a strip of negatives ===== */
+.steps-film { --holes: var(--ground); margin-top: 36px; }
+.steps-film .frames li { background: #2B2F2B; color: #FFFFFF; padding: 18px 16px 20px; gap: 8px; }
+.steps-film .num { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--volt); }
+.steps-film p { font-size: 15px; line-height: 1.5; color: var(--on-dark-muted); }
+
+@media (pointer: coarse) { .table-note { display: none; } }
+@media (max-width: 899px) {
+  .hero .wrap, .proof .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .orders { grid-template-columns: 1fr; }
+  .steps-film { padding: 14px 26px; }
+  .steps-film::before, .steps-film::after { top: 10px; bottom: 10px; left: auto; right: auto; width: 10px; height: auto;
+    background: repeating-linear-gradient(180deg, transparent 0 10px, var(--ground) 10px 22px, transparent 22px 32px); }
+  .steps-film::before { left: 8px; }
+  .steps-film::after { right: 8px; }
+  .steps-film .frames { flex-direction: column; }
+}
+@media (max-width: 599px) {
+  .table { padding: 28px 14px; }
+  .table .film .frames li:nth-child(n+4), .sheet .frames li:nth-child(n+4) { display: none; }
+  .loupe { width: 120px; height: 120px; border-width: 9px; background-size: 360px auto; }
+}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#">Sharp Sighted</a>
+  <nav aria-label="Main"><a href="#">For You</a><a href="#" aria-current="page">Headshots</a><a href="#">Video</a><a href="#">Gift Cards</a></nav>
+</div></header>
+
+<main id="main">
+<!-- 1. hero: light table -->
+<section class="band hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="stack">
+      <p class="eyebrow">Corporate Headshots · DFW</p>
+      <h1 id="hero-title">Headshots that look like one team.</h1>
+      <p class="lede muted">One day at your office. Same light, same look, every person. You pick the keepers from real proofs.</p>
+      <div class="actions" style="padding-top: 8px;"><a class="btn n12" href="#">Hold a January date <span class="arrow" aria-hidden="true">→</span></a><a class="link" href="#proof-title">See a featured set</a></div>
+    </div>
+    <div>
+      <div class="table" id="table" aria-label="Sample film strips on a light table" role="img">
+        <div class="film" aria-hidden="true"><ul class="frames">
+          <li><img src="img/studio-480.webp" width="343" height="480" alt="" fetchpriority="high"><span class="edge">SS 400 ▸ 12</span></li>
+          <li><img src="img/arms-480.webp" width="480" height="343" alt=""><span class="edge">▸ 13</span></li>
+          <li><img src="img/bw-480.webp" width="480" height="371" alt=""><span class="edge">▸ 14</span></li>
+          <li><img class="flip" src="img/studio-480.webp" width="343" height="480" alt=""><span class="edge">▸ 15</span></li>
+        </ul></div>
+        <div class="film" aria-hidden="true"><ul class="frames">
+          <li><img src="img/dog-480.webp" width="343" height="480" alt=""><span class="edge">SS 400 ▸ 22</span></li>
+          <li><img class="flip" src="img/arms-480.webp" width="480" height="343" alt=""><span class="edge">▸ 23</span></li>
+          <li><img src="img/studio-480.webp" width="343" height="480" alt=""><span class="edge">▸ 24</span></li>
+          <li><img class="flip" src="img/bw-480.webp" width="480" height="371" alt=""><span class="edge">▸ 25</span></li>
+        </ul></div>
+        <span class="loupe" id="loupe" aria-hidden="true"></span>
+      </div>
+      <p class="table-note">Move your pointer over the light table to use the loupe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. featured set: contact sheet -->
+<section class="band proof" aria-labelledby="proof-title" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="stack">
+      <p class="eyebrow">Featured set</p>
+      <h2 id="proof-title">Every person gets a full proof.</h2>
+      <p class="muted">We shoot a roll for each person. You circle the keeper. We retouch it and send it back matched to the rest of the team.</p>
+      <div><a class="link" href="#">See the whole sheet</a></div>
+    </div>
+    <div class="sheet n18 bar">
+      <div class="sheet-head" aria-hidden="true"><span>SAMPLE TEAM · ROLL 03</span><span>SHARP SIGHTED</span></div>
+      <div class="film"><ul class="frames" aria-label="Proof frames">
+        <li><div class="shot"><img loading="lazy" decoding="async" src="img/studio-480.webp" width="343" height="480" alt="Frame 31, facing camera"></div><span class="edge">▸ 31</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" class="flip" src="img/studio-480.webp" width="343" height="480" alt="Frame 32, turned slightly"><svg class="mark cross" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M8 10 L92 90 M90 8 L10 92" stroke="#FFFFFF" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" opacity="0.85"/></svg></div><span class="edge">▸ 32</span></li>
+        <li class="keeper"><div class="shot"><img loading="lazy" decoding="async" src="img/arms-480.webp" width="480" height="343" alt="Frame 33, arms crossed, circled as the keeper"><svg class="mark circle" viewBox="0 0 200 170" preserveAspectRatio="none" aria-hidden="true"><path d="M100 10 C 170 6, 196 50, 190 92 C 184 140, 130 166, 84 160 C 30 152, 6 116, 12 74 C 18 34, 56 12, 112 14" stroke="#C8F031" stroke-width="6" vector-effect="non-scaling-stroke" fill="none" stroke-linecap="round"/></svg></div><span class="edge">▸ 33 · KEEPER</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" src="img/bw-480.webp" width="480" height="371" alt="Frame 34, black and white"></div><span class="edge">▸ 34</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" class="flip" src="img/arms-480.webp" width="480" height="343" alt="Frame 35, arms crossed"></div><span class="edge">▸ 35</span></li>
+      </ul></div>
+      <div class="film" aria-hidden="true"><ul class="frames">
+        <li><div class="shot"><img loading="lazy" decoding="async" src="img/dog-480.webp" width="343" height="480" alt=""></div><span class="edge">▸ 36</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" src="img/studio-480.webp" width="343" height="480" alt=""></div><span class="edge">▸ 37</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" class="flip" src="img/bw-480.webp" width="480" height="371" alt=""><svg class="mark cross" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M8 10 L92 90 M90 8 L10 92" stroke="#FFFFFF" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" opacity="0.85"/></svg></div><span class="edge">▸ 38</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" src="img/arms-480.webp" width="480" height="343" alt=""></div><span class="edge">▸ 39</span></li>
+        <li><div class="shot"><img loading="lazy" decoding="async" class="flip" src="img/dog-480.webp" width="343" height="480" alt=""></div><span class="edge">▸ 40</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. packages: lab order -->
+<section class="band" aria-labelledby="order-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="stack" style="gap: 10px;"><p class="eyebrow">Order form · Founding rates</p><h2 id="order-title">Pick your order.</h2></div>
+      <p class="muted" style="max-width: 32ch;">Book by December 25. Shoot in January. Plus sales tax.</p>
+    </div>
+    <div class="orders">
+      <article class="order n18 bar" aria-labelledby="o1">
+        <div class="order-top"><span>LAB ORDER · 01</span><span>TEAM</span></div>
+        <div class="order-body">
+          <h3 id="o1">Team Day</h3>
+          <p class="muted" style="font-size: 17px;">We set up at your office and light everyone the same.</p>
+          <dl>
+            <div><dt>Where</dt><dd>Your office</dd></div>
+            <div><dt>Who</dt><dd>Your whole team</dd></div>
+            <div><dt>Proofs</dt><dd>A full roll per person</dd></div>
+            <div><dt>Founding rate</dt><dd><span class="rate">$600 + $70 to $90 per person</span></dd></div>
+          </dl>
+          <span class="check">Matched light for every person</span>
+          <div><a class="btn n12" href="#">Hold a date <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+      </article>
+      <article class="order n18 bar" aria-labelledby="o2">
+        <div class="order-top"><span>LAB ORDER · 02</span><span>ONE PERSON</span></div>
+        <div class="order-body">
+          <h3 id="o2">Executive Session</h3>
+          <p class="muted" style="font-size: 17px;">One leader, more looks, more time to get it right.</p>
+          <dl>
+            <div><dt>Where</dt><dd>Your office or on location</dd></div>
+            <div><dt>Who</dt><dd>One person</dd></div>
+            <div><dt>Proofs</dt><dd>Several looks</dd></div>
+            <div><dt>Founding rate</dt><dd><span class="rate">$900</span></dd></div>
+          </dl>
+          <span class="check">Retouched keepers</span>
+          <div><a class="btn n12" href="#">Hold a date <span class="arrow" aria-hidden="true">→</span></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4. process: negatives -->
+<section class="band" aria-labelledby="steps-title" style="background: var(--surface);">
+  <div class="wrap">
+    <div class="stack" style="gap: 10px;"><p class="eyebrow">How it works</p><h2 id="steps-title">From booking to keepers.</h2></div>
+    <div class="film steps-film" style="--holes: var(--surface);">
+      <ol class="frames">
+        <li><span class="num">FRAME 01</span><h3>Book</h3><p>Hold a date by December 25.</p></li>
+        <li><span class="num">FRAME 02</span><h3>Shoot</h3><p>We set up on site and work through the team.</p></li>
+        <li><span class="num">FRAME 03</span><h3>Proof</h3><p>Each person gets a contact sheet of their frames.</p></li>
+        <li><span class="num">FRAME 04</span><h3>Pick</h3><p>Circle your keeper from the proof.</p></li>
+        <li><span class="num">FRAME 05</span><h3>Deliver</h3><p>Retouched, matched files for the whole team.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="band close-band" aria-labelledby="close-title">
+  <div class="wrap">
+    <div><p class="eyebrow">Founding rates</p><h2 id="close-title">Book by December 25. Shoot in January.</h2><p class="muted">Nonprofits get 20% off list pricing.</p></div>
+    <a class="btn light n12" href="#">Hold a January date <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">Test run of the Headshots page. Copy is placeholder. Photos are stand-ins.</div></footer>
+<script>
+(() => {
+  const table = document.getElementById("table"), loupe = document.getElementById("loupe");
+  if (!table || !matchMedia("(pointer: fine)").matches) return;
+  const zoom = 2.6;
+  table.addEventListener("pointermove", (e) => {
+    const t = table.getBoundingClientRect();
+    const img = document.elementsFromPoint(e.clientX, e.clientY).find((el) => el.tagName === "IMG");
+    const size = loupe.offsetWidth;
+    loupe.style.left = (e.clientX - t.left - size / 2) + "px";
+    loupe.style.top = (e.clientY - t.top - size / 2) + "px";
+    if (!img) return;
+    const r = img.getBoundingClientRect();
+    const nw = img.naturalWidth || r.width, nh = img.naturalHeight || r.height;
+    const s = Math.max(r.width / nw, r.height / nh), dw = nw * s, dh = nh * s;
+    const ox = (r.width - dw) * 0.5, oy = (r.height - dh) * 0.25;
+    const px = (img.classList.contains("flip") ? (r.right - e.clientX) : (e.clientX - r.left)) - ox;
+    const py = (e.clientY - r.top) - oy;
+    loupe.style.backgroundImage = "url(" + img.currentSrc.replace("-480", "-960") + ")";
+    loupe.style.backgroundSize = (dw * zoom) + "px " + (dh * zoom) + "px";
+    loupe.style.backgroundPosition = (size / 2 - px * zoom) + "px " + (size / 2 - py * zoom) + "px";
+    loupe.style.transform = img.classList.contains("flip") ? "scaleX(-1)" : "none";
+  });
+})();
+</script>

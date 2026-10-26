@@ -1,0 +1,36 @@
+<!doctype html><html><body style="margin:0;background:transparent">
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const W = 2000, H = 760;
+const r = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+r.setSize(W, H); r.setPixelRatio(1); r.setClearColor(0x000000, 0);
+r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 0.78; r.outputColorSpace = THREE.SRGBColorSpace;
+r.shadowMap.enabled = true; r.shadowMap.type = THREE.VSMShadowMap;
+document.body.appendChild(r.domElement);
+const scene = new THREE.Scene();
+const pm = new THREE.PMREMGenerator(r); scene.environment = pm.fromScene(new RoomEnvironment(), 0.04).texture;
+const cam = new THREE.PerspectiveCamera(16, W / H, 0.1, 50); cam.position.set(0, 1.75, 6.0); cam.lookAt(0, 0.24, 0);
+const tex = await new THREE.TextureLoader().loadAsync('./oak.jpg');
+tex.colorSpace = THREE.SRGBColorSpace; tex.wrapS = tex.wrapT = THREE.RepeatWrapping; tex.rotation = Math.PI / 2; tex.repeat.set(1, 3.2); tex.anisotropy = 8;
+const oak = new THREE.MeshStandardMaterial({ map: tex, roughness: 0.48, metalness: 0 });
+const steel = new THREE.MeshStandardMaterial({ color: 0x1a1b1e, roughness: 0.42, metalness: 0.65 });
+const seat = new THREE.Mesh(new RoundedBoxGeometry(1.9, 0.075, 0.48, 4, 0.012), oak);
+seat.position.y = 0.43; seat.castShadow = true; seat.receiveShadow = true; scene.add(seat);
+function bar(w, h, d, x, y, z) { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), steel); m.position.set(x, y, z); m.castShadow = true; scene.add(m); }
+for (const x of [-0.74, 0.74]) {
+  for (const z of [-0.19, 0.19]) bar(0.035, 0.395, 0.035, x, 0.195, z);
+  bar(0.035, 0.035, 0.42, x, 0.375, 0);   // top rail under seat
+  bar(0.035, 0.035, 0.42, x, 0.018, 0);   // foot rail
+}
+bar(1.48, 0.03, 0.03, 0, 0.36, 0);        // stretcher
+const key = new THREE.DirectionalLight(0xffffff, 2.2); key.position.set(-1.2, 4, 2.2); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 14; key.shadow.blurSamples = 24; key.shadow.camera.left = -2; key.shadow.camera.right = 2; key.shadow.camera.top = 2; key.shadow.camera.bottom = -2; key.shadow.bias = -0.0004;
+scene.add(key); scene.add(new THREE.HemisphereLight(0xffffff, 0x9a9da3, 0.6));
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(8, 4), new THREE.ShadowMaterial({ opacity: 0.32 }));
+ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+r.render(scene, cam);
+window.done = r.domElement.toDataURL('image/png');
+</script></body></html>

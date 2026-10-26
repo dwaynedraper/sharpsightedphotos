@@ -1,0 +1,55 @@
+<title>Sharp Sighted Preview</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@500;600;700&display=swap">
+<style>
+/* Layout: one column of page "doors", split into the two sides of the site. */
+:root{--bg:#F2F5FF;--fg:#141A2E;--muted:#4A5370;--card:#FFFFFF;--line:#D5DCF2;--cobalt:#2F5BEA;--graphite:#2B2F2B;--volt:#C8F031;
+--display:"Playfair Display",Georgia,serif;--body:Montserrat,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10142A;--fg:#EEF1FB;--muted:#AAB3D1;--card:#181E3A;--line:#2C3560;--cobalt:#8EA8FF;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10142A;--fg:#EEF1FB;--muted:#AAB3D1;--card:#181E3A;--line:#2C3560;--cobalt:#8EA8FF;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+main{max-width:860px;margin:0 auto;padding-block:48px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:40px}
+h1{font-family:var(--display);font-size:clamp(34px,6vw,52px);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:26px;margin:0}
+p{margin:0;max-width:62ch}
+.muted{color:var(--muted)}
+.side{display:grid;gap:14px}
+.side ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.side a{display:grid;gap:4px;height:100%;box-sizing:border-box;padding:16px 18px;background:var(--card);border:1px solid var(--line);color:var(--fg);text-decoration:none}
+.ps a{border-radius:16px 0 16px 0}
+.bz a{border-bottom:4px solid var(--volt)}
+.side a b{font-size:17px}
+.side a span{font-size:14px;color:var(--muted)}
+.side a:hover,.side a:focus-visible{border-color:var(--cobalt);outline:none}
+.label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.note{border-top:1px solid var(--line);padding-top:20px;font-size:14px}
+</style>
+<main>
+  <div style="display:grid;gap:14px">
+    <p class="label">Site overhaul preview · not live</p>
+    <h1>Sharp Sighted Photos, the whole new site.</h1>
+    <p class="muted">New: Blue to Green is now the For You palette, and Gift Sessions is off the nav. Every page below is the real build. Links between pages work, and so do the hallway, the loupe, and the media pool. Analytics are switched off here, so clicking around will not count as visits.</p>
+  </div>
+  <section class="side" aria-labelledby="h-home">
+    <h2 id="h-home">Start here</h2>
+    <ul><li><a href="home.html"><b>Home</b><span>The two doors. For You or For Business.</span></a></li></ul>
+  </section>
+  <section class="side ps" aria-labelledby="h-ps">
+    <h2 id="h-ps">For You</h2>
+    <ul>
+      <li><a href="portraits.html"><b>Story Portraits</b><span>Updated. Photo cards, heirloom book, new hallway light</span></a></li>
+      <li><a href="gallery.html"><b>Gallery</b><span>Framed collections</span></a></li>
+      <li><a href="gift.html"><b>Gift Sessions</b><span>No nav link. Reached from the Give a Gift Session buttons.</span></a></li>
+      <li><a href="contact.html"><b>Contact</b><span>Connection Call, phone, QR, form</span></a></li>
+    </ul>
+  </section>
+  <section class="side bz" aria-labelledby="h-bz">
+    <h2 id="h-bz">For Business</h2>
+    <ul>
+      <li><a href="business.html"><b>Business hub</b><span>Headshots or Films, and both together</span></a></li>
+      <li><a href="business-headshots.html"><b>Corporate Headshots</b><span>Light table, loupe, lab order pricing</span></a></li>
+      <li><a href="business-films.html"><b>Brand Films</b><span>Program monitor, media pool, render queue</span></a></li>
+    </ul>
+  </section>
+  <p class="note muted">Gallery covers come from Cloudinary and the contact form comes from Sprout. The preview frame blocks outside images and scripts, so those two spots may show empty here. They work on the real site.</p>
+</main>

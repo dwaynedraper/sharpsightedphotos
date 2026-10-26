@@ -1,0 +1,1 @@
+const h=require('serve-handler');require('http').createServer((q,r)=>h(q,r,{public:process.argv[2],headers:[{source:'**/*.@(webp|woff2)',headers:[{key:'Cache-Control',value:'public, max-age=31536000, immutable'}]}]})).listen(Number(process.argv[3]||8099));
