@@ -1,4 +1,4 @@
-/* For You side. Daylight Cobalt, Soft Leaf, gallery wall. Generated from the approved test pages. */
+/* For You side. Blue to Green accents on a daylight wall, Soft Leaf corners, gallery wall. Generated from the approved test pages. */
 .ps {
 
 
@@ -11,8 +11,8 @@
 /* Layout: one column of full-width bands that alternate white and soft-blue wall, each holding a 1160px wrap. */
 &{
   --ground: #FFFFFF; --wall: #F2F5FF; --ink: #151A33; --muted: #4B5270;
-  --cobalt: #2457E6; --cobalt-deep: #1B45BA; --fuchsia: #D6127F; --fuchsia-deep: #A30E61;
-  --pink-tint: #FCE4F1; --blue-tint: #E3EBFF; --blue-tint-2: #D2DEFF; --line: #D9DFF2;
+  --blue: #1D5BFF; --blue-deep: #1546D1; --green: #05935F; --green-deep: #08784A;
+  --green-tint: #DCF5EA; --blue-tint: #E3EBFF; --blue-tint-2: #D2DEFF; --line: #D9DFF2;
   --floor: #D9DFF2; --floor-seam: #CBD3EC; --frame-black: #0D0D0D; --mat: #FFFFFF;
   --display: var(--font-playfair), Georgia, "Times New Roman", serif;
   --body: var(--font-montserrat), system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -29,7 +29,7 @@ p { margin: 0; }
 .wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
 .band { padding-block: clamp(56px, 8vw, 96px); }
 .band.wall { background: var(--wall); }
-.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); }
 .muted { color: var(--muted); }
 .stack { display: flex; flex-direction: column; gap: 18px; }
 .skip { position: absolute; left: 16px; top: -80px; z-index: 20; background: var(--ink); color: #FFFFFF; padding: 12px 18px; border-radius: var(--leaf); font-weight: 700; }
@@ -41,15 +41,15 @@ p { margin: 0; }
 .brand { font-family: var(--display); font-weight: 600; font-size: 22px; color: var(--ink); text-decoration: none; }
 .top nav { display: flex; gap: 20px; }
 .top nav a { font-weight: 600; font-size: 16px; color: var(--ink); text-decoration: none; padding-block: 8px; }
-.top nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--fuchsia); text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.top nav a[aria-current] { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
-/* buttons (locked: Cobalt to Fuchsia) */
+/* buttons (locked: Blue to Green) */
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 24px; border-radius: var(--leaf); font-weight: 700; font-size: 16px; text-decoration: none; transition: background-color .15s, color .15s; }
-.btn-main { background: linear-gradient(120deg, var(--cobalt), var(--fuchsia)); color: #FFFFFF; }
-.btn-main:hover { background: linear-gradient(120deg, var(--cobalt-deep), var(--fuchsia-deep)); }
-.btn-soft { background: var(--blue-tint); color: var(--cobalt-deep); }
+.btn-main { background: linear-gradient(120deg, var(--blue), var(--green)); color: #FFFFFF; }
+.btn-main:hover { background: linear-gradient(120deg, var(--blue-deep), var(--green-deep)); }
+.btn-soft { background: var(--blue-tint); color: var(--blue-deep); }
 .btn-soft:hover { background: var(--blue-tint-2); color: var(--ink); }
-a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline-offset: 3px; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
 .actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
 /* ===== the frame: near-black moulding, white mat, cut bevel ===== */
@@ -92,10 +92,10 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline
 .pkgs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; align-items: end; }
 .pkg { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; min-width: 0; }
 .pkg .frame { --fw: 14px; --mw: clamp(22px, 3vw, 34px); --bw: 2px; width: 100%; }
-.label { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 3px solid var(--fuchsia); }
+.label { display: flex; flex-direction: column; gap: 4px; padding-left: 14px; border-left: 3px solid var(--green); }
 .label .medium { font-family: var(--display); font-style: italic; font-weight: 400; font-size: 18px; color: var(--muted); }
 .label .count { font-size: 15px; font-weight: 600; color: var(--muted); }
-.label .price { margin-top: 4px; font-size: 22px; font-weight: 700; color: var(--fuchsia-deep); }
+.label .price { margin-top: 4px; font-size: 22px; font-weight: 700; color: var(--green-deep); }
 
 /* ===== 3. the hallway: a real gallery wall, concrete floor, and lighting ===== */
 .hall-head { padding-block: clamp(56px, 8vw, 96px) 32px; }
@@ -162,7 +162,7 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline
 .steps .hook { position: absolute; left: 50%; top: -70px; width: 28px; height: 10px; margin-left: -14px; background: var(--ink); }
 .steps .wires { position: absolute; left: 10%; right: 10%; top: -62px; height: 62px; }
 .steps .wires svg { width: 100%; height: 100%; overflow: visible; }
-.steps .num { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuchsia-deep); }
+.steps .num { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-deep); }
 .steps p { font-size: 17px; line-height: 1.55; color: var(--muted); }
 
 /* ===== 5. Gift Sessions: admission ticket ===== */
@@ -170,13 +170,13 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--fuchsia); outline
 .tickets { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .ticket { --punch: radial-gradient(circle at 0 50%, transparent 17px, #000 18px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 17px, #000 18px) right / 51% 100% no-repeat;
   display: grid; grid-template-columns: 178px 1fr; background: #FFFFFF; border: 2px solid var(--line); border-radius: var(--leaf); overflow: hidden; -webkit-mask: var(--punch); mask: var(--punch); }
-.stub { background: linear-gradient(160deg, var(--cobalt), var(--fuchsia)); color: #FFFFFF; padding: 24px 22px 24px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-right: 3px dashed #FFFFFF; }
+.stub { background: linear-gradient(160deg, var(--blue), var(--green)); color: #FFFFFF; padding: 24px 22px 24px 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; border-right: 3px dashed #FFFFFF; }
 .stub .admit { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
 .stub .gc { font-family: var(--display); font-size: 28px; font-weight: 600; line-height: 1.1; }
 .stub .edition { display: flex; flex-direction: column; font-size: 13px; font-weight: 700; line-height: 1.35; white-space: nowrap; }
 .ticket-body { padding: 24px 30px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
 .ticket-body .good { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-.ticket-body .price { font-size: 24px; font-weight: 700; color: var(--fuchsia-deep); }
+.ticket-body .price { font-size: 24px; font-weight: 700; color: var(--green-deep); }
 
 footer { border-top: 2px solid var(--line); padding-block: 32px; font-size: 15px; color: var(--muted); }
 
