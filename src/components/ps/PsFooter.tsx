@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export default function PsFooter() {
   return (
@@ -22,7 +22,7 @@ export default function PsFooter() {
         </div>
         <div className="foot-contact">
           <p className="f-h">Say hello</p>
-          <a href={site.connectionCall}>Book a free Connection Call</a>
+          <a href={site.connectionCall}>{cta.call}</a>
           <a href={site.phoneHref}>{site.phoneDisplay}, text preferred</a>
           <a href={`mailto:${site.email}`}>{site.email}</a>
         </div>

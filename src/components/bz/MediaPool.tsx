@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { films } from '@/content/films';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 // Five films in a media pool. Picking one opens a card with its photo, price, and the inspector.
 export default function MediaPool() {
@@ -54,7 +54,7 @@ export default function MediaPool() {
             <div><dt>List price</dt><dd>{d.list}</dd></div>
             <div><dt>Terms</dt><dd>{d.term}</dd></div>
           </dl>
-          <div className="cta"><a className="btn light n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a></div>
+          <div className="cta"><a className="btn light n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a></div>
         </div>
       </dialog>
     </>

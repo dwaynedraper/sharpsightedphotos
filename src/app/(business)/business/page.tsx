@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import BzNav from '@/components/bz/BzNav';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Headshots and Films for Businesses in DFW',
@@ -29,8 +29,7 @@ export default function BusinessHub() {
               <h1 id="hub-title">Headshots and films for businesses.</h1>
               <p className="lede muted">For DFW teams and causes with a story worth telling. I come to you, light it right, and edit every frame myself.</p>
               <div className="actions">
-                <a className="btn n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a>
-                <a className="link" href={site.connectionCall}>Book a free Connection Call</a>
+                <a className="btn n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a>
               </div>
             </div>
           </div>
@@ -80,7 +79,7 @@ export default function BusinessHub() {
                 <h3>Not sure which one you need?</h3>
                 <p className="muted">Book a free 15-minute Connection Call. We will figure it out together.</p>
               </div>
-              <a className="btn n12" href={site.connectionCall}>Book a Connection Call <span className="arrow" aria-hidden="true">→</span></a>
+              <a className="btn n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a>
             </div>
           </div>
         </section>

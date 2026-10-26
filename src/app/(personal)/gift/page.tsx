@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import PsNav from '@/components/ps/PsNav';
 import { TicketStub } from '@/components/ps/Tickets';
-import { giftRequestLink, site } from '@/content/site';
+import { giftRequestLink, site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Gift Sessions',
@@ -66,7 +66,7 @@ export default function GiftPage() {
               <p className="lede muted">Give someone a story portrait session in Dallas Fort Worth. Every Gift Session includes the hand-edited images and the framed prints they will hang on their wall.</p>
               <p className="anchor">Founding rates through <b>December 25, 2026</b>.</p>
               <div className="actions">
-                <a className="btn btn-main" href={giftRequestLink}>Request a Gift Session</a>
+                <a className="btn btn-main" href={giftRequestLink}>{cta.gift}</a>
                 <a className="btn btn-soft" href={site.phoneHref}>Call or text {site.phoneDisplay}</a>
               </div>
             </div>
@@ -132,7 +132,7 @@ export default function GiftPage() {
           <div className="wrap closing-inner">
             <h2 id="gift-close">Ready to give one?</h2>
             <p className="muted">Email me, or call or text {site.phoneDisplay}.</p>
-            <div className="actions"><a className="btn btn-main" href={giftRequestLink}>Request a Gift Session</a></div>
+            <div className="actions"><a className="btn btn-main" href={giftRequestLink}>{cta.gift}</a></div>
             <p className="fine muted">Gift Sessions are paid in full and are good for one session of the type shown. They are not refundable. Sessions take place in the Dallas Fort Worth area by March 31, 2027.</p>
           </div>
         </section>

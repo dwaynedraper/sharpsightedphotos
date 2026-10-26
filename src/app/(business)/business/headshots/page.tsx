@@ -3,7 +3,7 @@ import Image from 'next/image';
 import BzNav from '@/components/bz/BzNav';
 import LightTable from '@/components/bz/LightTable';
 import { standardIncluded, featuredIncluded, bulkRows, addOns, headshotFaq } from '@/content/headshots';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Corporate Headshots in DFW',
@@ -70,8 +70,7 @@ export default function HeadshotsPage() {
               <p className="lede muted">I come to your office. Same light, same polish, every face. You see every frame on a monitor as we shoot.</p>
               <p className="anchor">The Standard Set starts at <b>$600 setup plus $70 to $90 per person</b>.</p>
               <div className="actions">
-                <a className="btn n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a>
-                <a className="link" href={site.connectionCall}>Book a free Connection Call</a>
+                <a className="btn n12" href={site.headshotBooking}>{cta.headshotsBook} <span className="arrow" aria-hidden="true">→</span></a>
               </div>
             </div>
             <LightTable />
@@ -176,7 +175,7 @@ export default function HeadshotsPage() {
                   </dl>
                   <ul className="order-list">{standardIncluded.map((x) => <li key={x}>{x}</li>)}</ul>
                   <p className="best"><b>Best for</b> team headshot days, new hire photos, website refreshes, and annual updates.</p>
-                  <div><a className="btn n12" href={site.connectionCall}>Hold a date <span className="arrow" aria-hidden="true">→</span></a></div>
+                  <div><a className="btn n12" href={site.headshotBooking}>{cta.headshotsBook} <span className="arrow" aria-hidden="true">→</span></a></div>
                 </div>
               </article>
               <article className="order n18 bar" aria-labelledby="o2">
@@ -191,7 +190,7 @@ export default function HeadshotsPage() {
                   </dl>
                   <ul className="order-list">{featuredIncluded.map((x) => <li key={x}>{x}</li>)}</ul>
                   <p className="best"><b>Best for</b> founders, principals, practice leads, and anyone whose face is part of the brand.</p>
-                  <div><a className="btn n12" href={site.connectionCall}>Hold a date <span className="arrow" aria-hidden="true">→</span></a></div>
+                  <div><a className="btn n12" href={site.headshotBooking}>{cta.headshotsBook} <span className="arrow" aria-hidden="true">→</span></a></div>
                 </div>
               </article>
             </div>
@@ -223,7 +222,7 @@ export default function HeadshotsPage() {
               <h2 id="found-title">Book by December 25. Shoot in January.</h2>
               <p className="muted">Today&apos;s prices hold for any team day booked and paid by December 25, 2026, even when the shoot happens in January. That&apos;s when new hires arrive and everyone updates LinkedIn. Wednesday and Thursday dates go first.</p>
             </div>
-            <a className="btn light n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a>
+            <a className="btn light n12" href={site.headshotBooking}>{cta.headshotsBook} <span className="arrow" aria-hidden="true">→</span></a>
           </div>
         </section>
 
@@ -262,9 +261,12 @@ export default function HeadshotsPage() {
               <div className="stack" style={{ gap: 12 }}>
                 <p className="eyebrow">Next step</p>
                 <h2 id="close-title">Ready to make your team page look like one firm?</h2>
-                <p className="muted">Book a 15-minute Connection Call. We will walk through team size, timeline, and which set fits. No pressure and no pitch.</p>
+                <p className="muted">Pick a date for your team. If you have questions first, a 15-minute Connection Call walks through team size, timeline, and which set fits. No pressure and no pitch.</p>
               </div>
-              <a className="btn n12" href={site.connectionCall}>Book a free Connection Call <span className="arrow" aria-hidden="true">→</span></a>
+              <div className="actions">
+                <a className="btn n12" href={site.headshotBooking}>{cta.headshotsBook} <span className="arrow" aria-hidden="true">→</span></a>
+                <a className="link" href={site.connectionCall}>{cta.headshotsCall}</a>
+              </div>
             </div>
           </div>
         </section>

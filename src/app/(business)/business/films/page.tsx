@@ -4,7 +4,7 @@ import BzNav from '@/components/bz/BzNav';
 import ProgramMonitor from '@/components/bz/ProgramMonitor';
 import MediaPool from '@/components/bz/MediaPool';
 import { films, everyFilm, customRates } from '@/content/films';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Brand Films and Testimonial Videos in DFW',
@@ -35,8 +35,7 @@ export default function FilmsPage() {
               <p className="lede muted">Testimonials, brand stories, and monthly video for DFW businesses. I plan it, shoot it, and edit it myself.</p>
               <p className="anchor">Projects start at <b>$1,500</b>. Monthly plans start at <b>$800 a month</b>.</p>
               <div className="actions">
-                <a className="btn n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a>
-                <a className="link" href={site.connectionCall}>Book a free Connection Call</a>
+                <a className="btn n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a>
               </div>
             </div>
             <ProgramMonitor />
@@ -153,7 +152,7 @@ export default function FilmsPage() {
                 <h2 id="np-title">Have a cause? Let&apos;s tell it.</h2>
                 <p className="muted">Nonprofits get 20% off list prices. I can plan around your Giving Day, your gala, or your next campaign.</p>
               </div>
-              <a className="btn n12" href={site.connectionCall}>Book a free Connection Call <span className="arrow" aria-hidden="true">→</span></a>
+              <a className="btn n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a>
             </div>
           </div>
         </section>
@@ -190,8 +189,7 @@ export default function FilmsPage() {
                 <p className="muted">Founding rates end December 25. Book now and shoot in January. Monthly plans keep the founding rate for 12 months.</p>
               </div>
               <div className="actions">
-                <a className="btn light n12" href={site.connectionCall}>Hold a January date <span className="arrow" aria-hidden="true">→</span></a>
-                <a className="link on-dark" href={site.connectionCall}>Book a free Connection Call</a>
+                <a className="btn light n12" href={site.connectionCall}>{cta.call} <span className="arrow" aria-hidden="true">→</span></a>
               </div>
             </div>
             <div className="panel queue n18" aria-hidden="true">

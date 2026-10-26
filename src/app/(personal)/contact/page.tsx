@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import PsNav from '@/components/ps/PsNav';
 import ContactForm from '@/components/ContactForm';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Contact Dean Draper',
@@ -21,7 +21,7 @@ export default function ContactPage() {
               <p className="eyebrow">Contact</p>
               <h1 id="contact-title">Let&apos;s talk about your story.</h1>
               <p className="lede muted">The easiest first step is a free 15-minute Connection Call. Ask anything you still want to know, and we will see if we are a fit.</p>
-              <div className="actions"><a className="btn btn-main" href={site.connectionCall}>Book a free Connection Call</a></div>
+              <div className="actions"><a className="btn btn-main" href={site.connectionCall}>{cta.call}</a></div>
               <dl className="contact-list">
                 <div><dt>Text or call</dt><dd><a href={site.phoneHref}>{site.phoneDisplay}</a> <span className="muted">Text is preferred.</span></dd></div>
                 <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>

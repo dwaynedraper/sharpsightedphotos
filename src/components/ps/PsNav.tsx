@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 type Current = 'portraits' | 'gallery' | 'gift' | 'contact' | undefined;
 
@@ -23,7 +23,7 @@ export default function PsNav({ current }: { current?: Current }) {
               ))}
               <Link href="/business" className="side-switch">For Your Business</Link>
             </nav>
-            <a className="btn btn-main head-cta" href={site.connectionCall}>Book a Connection Call</a>
+            <a className="btn btn-main head-cta" href={site.connectionCall}>{cta.call}</a>
           </div>
         </div>
       </header>

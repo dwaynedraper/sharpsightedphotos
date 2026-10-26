@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 type Current = 'hub' | 'headshots' | 'films' | undefined;
 
+// The nav button repeats the page's main CTA. Headshots is the one page whose main CTA is a booking.
 export default function BzNav({ current }: { current?: Current }) {
+  const book = current === 'headshots';
   return (
     <>
       <a className="skip" href="#main">Skip to content</a>
@@ -17,7 +19,7 @@ export default function BzNav({ current }: { current?: Current }) {
               <Link href="/business/films" aria-current={current === 'films' ? 'page' : undefined}>Films</Link>
               <Link href="/portraits" className="side-switch">For You</Link>
             </nav>
-            <a className="btn n12 head-cta" href={site.connectionCall}>Hold a date <span className="arrow" aria-hidden="true">→</span></a>
+            <a className="btn n12 head-cta" href={book ? site.headshotBooking : site.connectionCall}>{book ? cta.headshotsBook : cta.call} <span className="arrow" aria-hidden="true">→</span></a>
           </div>
         </div>
       </header>

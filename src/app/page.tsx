@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -57,7 +57,7 @@ export default function Home() {
           <div className="home-guide-inner">
             <h2 id="home-guide-title">One person behind every frame.</h2>
             <p>I&apos;m Dean Draper. I plan every session, shoot every frame, and edit every image myself, across Denton and Dallas Fort Worth. Not a cog. Never a number.</p>
-            <a className="home-call" href={site.connectionCall}>Book a free Connection Call</a>
+            <a className="home-call" href={site.connectionCall}>{cta.call}</a>
           </div>
         </section>
       </main>

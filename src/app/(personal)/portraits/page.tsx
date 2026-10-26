@@ -7,7 +7,7 @@ import HeirloomBook from '@/components/ps/HeirloomBook';
 import Hallway from '@/components/ps/Hallway';
 import Tickets from '@/components/ps/Tickets';
 import { packages, portraitFaq } from '@/content/portraits';
-import { site } from '@/content/site';
+import { site, cta } from '@/content/site';
 
 export const metadata: Metadata = {
   title: 'Story Portraits in DFW',
@@ -62,8 +62,8 @@ export default function PortraitsPage() {
               <p className="lede muted">No stiff poses. No cookie-cutter setups. You tell me your story, and I photograph you living it.</p>
               <p className="anchor">Sessions start at <b>$900</b>. Founding rates run through December 25.</p>
               <div className="actions">
-                <a className="btn btn-main" href={site.connectionCall}>Book a free Connection Call</a>
-                <Link className="btn btn-soft" href="/gift">Give a Gift Session</Link>
+                <a className="btn btn-main" href={site.connectionCall}>{cta.call}</a>
+                <Link className="btn btn-soft" href="/gift">{cta.gift}</Link>
               </div>
             </div>
             <div className="hero-art">
@@ -262,7 +262,7 @@ export default function PortraitsPage() {
               <p className="eyebrow">Gift Sessions</p>
               <h2 id="gift-title">Give a story portrait session as a gift.</h2>
               <p className="muted">They get a ticket to their own session, good for a Verse or a Story.</p>
-              <div><Link className="btn btn-main" href="/gift">Give a Gift Session</Link></div>
+              <div><Link className="btn btn-main" href="/gift">{cta.gift}</Link></div>
             </div>
             <Tickets />
           </div>
@@ -289,8 +289,8 @@ export default function PortraitsPage() {
             <h2 id="close-title">Your story belongs on a wall, not in a camera roll.</h2>
             <p className="muted">Every year, people leave portrait sessions with photos that are fine and forgettable. Yours should look like you.</p>
             <div className="actions">
-              <a className="btn btn-main" href={site.connectionCall}>Book a free Connection Call</a>
-              <a className="btn btn-soft" href="#packages">See the packages</a>
+              <a className="btn btn-main" href={site.connectionCall}>{cta.call}</a>
+              <a className="btn btn-soft" href="#packages">{cta.packages}</a>
             </div>
           </div>
         </section>
