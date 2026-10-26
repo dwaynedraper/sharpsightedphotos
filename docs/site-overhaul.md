@@ -1,6 +1,21 @@
 # Site Overhaul Handoff
 
-Status as of October 26, 2026. Read this first when picking the overhaul back up in a new session.
+Status as of October 26, 2026. Read this first when picking the overhaul back up in a new chat. The same file lives in the repo at `docs/site-overhaul.md`.
+
+## How to resume in a new chat
+
+1. Read this note, then the Sharp Sighted Site Overhaul doc linked below.
+2. The repo is on Dean's Mac. Link the chat to his computer and work in `~/projects/sharp/photos` on the `site-overhaul` branch. To build in the cloud workspace, tar the repo over, run `npm ci`, and use `tools/build/verify-build.sh`, because Google Fonts is blocked there.
+3. Git on the Mac needs delete permission for the `sharp` folder, or lock files get left behind.
+4. Ask Dean before every push. He pushes and merges himself.
+5. Dean's working style: numbered questions, ask whether each section is done before moving on, no em dashes, no semicolons, colons rarely, short sentences.
+
+## Business and messaging decisions from Oct 26
+
+- **Discovery Hour.** Three parts: who you are, the message, and bringing it to life. There are two directions, Story to tell or Seen as you are. Dean promises the session plan within 7 days. He calls the deeper part "get personal," not "intimate."
+- **Connection Call.** 15 minutes. Set the plan, hear their why, inform, inspire, and ask once at the end. No discounts. One follow-up, on the date they choose.
+- **Soft offers.** Find Your Story is a primer PDF that gets people noticing without handing them the interview questions. The Team Headshot Day Kit is a 5-step PDF for office managers. Dean is writing his own versions of both as a voice test. Compare them with the drafts in `docs/guides`, then record the differences in his voice.
+- **Gift Sessions** have no nav link, but every page stays in the sitemap. Distracting nav hurts close rates.
 
 ## Where the work lives
 
@@ -11,7 +26,7 @@ Status as of October 26, 2026. Read this first when picking the overhaul back up
   - Guide Outlines: https://claude.ai/artifact/Cxpiry4tMMNtGTfbSFXZBa
   - Discovery Hour Interview Script: https://claude.ai/artifact/7RwwbGanRSByfc1NWyg4As
   - Connection Call Script: https://claude.ai/artifact/6sU2cTTcBXPgz58c117RmJ
-  - Site Overhaul decisions and status: see the Claude Project doc `claude/site-overhaul-handoff.md`
+  - Sharp Sighted Site Overhaul (decisions, status, open items, written for Dean): https://claude.ai/artifact/SJ3y7eWSYXZE8GYBM8k8Rr
 - **Guide drafts:** `docs/guides/` holds the HTML sources and PDFs for Find Your Story and the Team Headshot Day Kit.
 - **Helper scripts:** `tools/`. See `tools/README.md`.
 
