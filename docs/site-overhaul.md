@@ -57,10 +57,10 @@ Route groups `(personal)` and `(business)` wrap pages in `.ps` and `.bz`. All st
 
 ## Design system, For You
 
-- **Palette:** Blue to Green. Blue `#1D5BFF`, deep blue `#1546D1`, green `#05935F`, deep green `#08784A` for prices and labels, green tint `#DCF5EA`. The wall is `#F2F5FF` and the ink is `#151A33`. This replaced Cobalt to Fuchsia on October 26.
+- **Palette:** Azure to Emerald. Azure `#1D5BFF`, deep azure `#1546D1`, emerald `#05935F`, deep emerald `#08784A` for prices and labels, emerald tint `#DCF5EA`. The wall is `#F2F5FF` and the ink is `#151A33`. This replaced Cobalt to Fuchsia on October 26.
 - **Corners:** Soft Leaf `16px 0 16px 0` everywhere. Text fields are 8px.
 - **Type:** Playfair Display for headings, Montserrat for body. H1 64, H2 48, H3 32, body 18.
-- **Buttons:** Blue to green gradient for the main button. Soft blue for the second.
+- **Buttons:** Azure to Emerald gradient for the main button. Soft azure for the second.
 - **The four photo styles**
   1. Gallery mat (`Frame`) for single photos inside an album or on the gallery wall.
   2. Heirloom book (`HeirloomBook`) for a link to an album. It's a rendered album with the cover fit by one perspective transform.

@@ -9,7 +9,7 @@ type Props = {
 };
 
 // Photo style 3, the photo card. For an offering that has a cover image.
-// The photo sits on top, untouched. A blue to green badge sits on the seam between photo and text.
+// The photo sits on top, untouched. An Azure to Emerald badge sits on the seam between photo and text.
 export default function PhotoCard({ image, badge, badgeLabel, sizes, children }: Props) {
   return (
     <article className="pcard">
